@@ -25,11 +25,11 @@ Matheus Araújo | [Linkedin]()
 
 **Tarefas e Projetos**
 
-- [] 
-- [] 
-- [] 
-- [] 
-- [] 
+- [x] 
+- [x] 
+- [x] 
+- [x] 
+- [x] 
 
 
 [Voltar para o início](#matéria-3---programação-orientada-a-objetos-java)
