@@ -1,6 +1,6 @@
 ![](https://images.sympla.com.br/5fe9f7268dd4f-xs.png)
 
-[Matéria](#matéria-3---programação-orientada-a-objetos-java) | [Banco de Dados](#o-que-é-bando-de-dados) | [Nosso Grupo ♡](#grupo-1)
+[Matéria](#matéria-3---programação-orientada-a-objetos-java) | [Java](#o-que-é-java) | [Nosso Grupo ♡](#grupo-1)
 # Matéria 3 - Programação Orientada a Objetos (**Java**)
 _Nessa matéria aprendemos como funciona o Banco de Dados!_
  >Professora: Débora Souza [Linkedin](https://www.linkedin.com/in/debora-o-souza/)
@@ -32,4 +32,4 @@ Matheus Araújo | [Linkedin]()
 - [] 
 
 
-[Voltar para o início](#matéria-2---banco-de-dados)
+[Voltar para o início](#matéria-3---programação-orientada-a-objetos-java)
