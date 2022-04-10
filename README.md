@@ -25,8 +25,8 @@ Matheus Araújo | [Linkedin]()
 
 **Tarefas e Projetos**
 
-- [x] 
-- [x] 
+- [x] Listas
+- [x] Atividades
 - [x] 
 - [x] 
 - [x] 
