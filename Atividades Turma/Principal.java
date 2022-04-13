@@ -14,10 +14,11 @@ public class Principal {
 		suaConta.titular = "Coringa";
 		suaConta.saldo = 30000;
 		suaConta.numero = 666;
-		minhaConta.transfere(suaConta, 1200);
-
-		System.out.println(minhaConta.titular + minhaConta.saldo);
-		System.out.println(suaConta.titular + suaConta.saldo);
+		minhaConta.transfere(suaConta, 1000);
+		minhaConta.depositar(1000);
+		
+		System.out.println(minhaConta.titular + " " + minhaConta.saldo);
+		System.out.println(suaConta.titular + " " + suaConta.saldo);
 
 	}
 

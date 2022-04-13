@@ -15,7 +15,17 @@ public class Conta {
 		}
 	}
 
-	boolean transfere(Conta suaConta, double valor) {
+	public boolean depositar(double valor) {
+		if (0 > valor) {
+			return false;
+		} else {
+			double novoSaldo = this.saldo + valor;
+			this.saldo = novoSaldo;
+			return true;
+		}
+	}
+	
+	public boolean transfere(Conta suaConta, double valor) {
 		if (this.saldo < valor) {
 			System.out.println("Saldo insuficiente");
 			return false;
