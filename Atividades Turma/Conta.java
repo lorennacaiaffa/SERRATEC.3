@@ -24,7 +24,7 @@ public class Conta {
 			return true;
 		}
 	}
-	
+
 	public boolean transfere(Conta suaConta, double valor) {
 		if (this.saldo < valor) {
 			System.out.println("Saldo insuficiente");
