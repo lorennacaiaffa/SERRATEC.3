@@ -16,10 +16,15 @@ public class LeituraEscrita {
 		System.out.println("Escreva o nome do arquivo: ");
 		String nome = sc.next();
 		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nome));
-		String linha = "";
 		System.out.println("Escreva algo: ");
-		linha = sc.next();
-		buffWrite.append(linha + "\n");
+		while(true) {
+			String linha = sc.nextLine();
+			if(linha.equals("-1"))
+				break;
+			buffWrite.append(linha);
+			buffWrite.newLine();
+		}
+		
 		buffWrite.close();
 		sc.close();
 		

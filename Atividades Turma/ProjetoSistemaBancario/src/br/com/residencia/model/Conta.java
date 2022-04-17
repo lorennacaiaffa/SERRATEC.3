@@ -36,5 +36,44 @@ public class Conta {
 	public void setNumeroConta(Integer numeroConta) {
 		this.numeroConta = numeroConta;
 	}
+	public double saldo;
+	public int numero;
+	public String titular;
+		
+	
+	public boolean sacar(double valor) {
+		if (this.saldo < valor) {
+			return false;
+		} else {
+			double novoSaldo = this.saldo - valor;
+			this.saldo = novoSaldo;
+			return true;
+		}
+	}
+
+	public boolean depositar(double valor) {
+		if (0 > valor) {
+			return false;
+		} else {
+			double novoSaldo = this.saldo + valor;
+			this.saldo = novoSaldo;
+			return true;
+		}
+	}
+	
+	public boolean transferir(Conta suaConta, double valor) {
+		if (this.saldo < valor) {
+			System.out.println("Saldo insuficiente");
+			return false;
+		} else {
+			double novoSaldo = this.saldo - valor;
+			this.saldo = novoSaldo;
+			suaConta.saldo = suaConta.saldo + valor;
+			return true;
+		}
+		
+	}
 	
 }
+	
+
