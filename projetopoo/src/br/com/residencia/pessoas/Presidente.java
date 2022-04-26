@@ -9,9 +9,9 @@ public class Presidente extends Funcionario {
 
 	private Integer idPresidente;
 	List<Agencia> agencia = new ArrayList<>();
+	
 	public Presidente(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			Date dataNascimento, String tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
-			String login, Double salario, String cargo, Integer idPresidente, List<Agencia> agencias) {
+			Date dataNascimento, String tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha, Double salario, String cargo, Integer idPresidente, List<Agencia> agencias) {
 		super(nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, tipoPessoa, idEndereco, idFuncionario,
 				senha, salario, cargo);
 		this.idPresidente = idPresidente;
