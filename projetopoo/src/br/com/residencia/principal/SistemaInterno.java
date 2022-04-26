@@ -1,8 +1,7 @@
 package br.com.residencia.principal;
 
 import java.io.IOException;
-
-//import br.com.residencia.menu.MenuInicial;
+import br.com.residencia.menu.MenuInicial;
 //import br.com.residencia.agencias.Agencia;
 //import br.com.residencia.io.LeituraEscrita;
 //import br.com.residencia.pessoas.Funcionario;
@@ -18,6 +17,9 @@ public class SistemaInterno {
 
 	public static void main(String[] args) throws IOException {
 
+		MenuInicial mn = new MenuInicial();
+		mn.login();
+		mn.menu();
 
 //		Funcionario funcionario = new Gerente();
 //		System.out.println(funcionario.getBonificacao());

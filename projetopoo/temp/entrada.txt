@@ -16,16 +16,16 @@ Carlos Alves;Masculino;solteiro;504.226.587-23;(23)951665656;carlos@alves.com.br
 Joao Goncalves;Masculino;divorciado;579.809.818-47;(47)994204156;joao@gonçalves.com.br;34420;fisica;4;4
 Jose Batista;Masculino;solteiro;967.414.295-90;(90)968541610;jose@batista.com.br;27393;fisica;5;5
 Aline Freitas;Feminino;casada;846.858.824-08;(22)938516843;aline@freitas.com.br;32739;fisica;6;6
-Carl Max;Mascolino;Casado;482.624.915-21;(88)947378078;carl@max.com.br;24943;fisica;7;7
+Carl Max;Masculino;Casado;482.624.915-21;(88)947378078;carl@max.com.br;24943;fisica;7;7
 Fernanda Borges;Feminino;Casado;841.071.012-90;(31)966359368;fernanda@borges.com.br;30582;fisica;8;8
 Ana Moraes;Feminino;Casado;774.506.744-92;(92)903964525;ana@moraes.com.br;28975;fisica;9;9
-Carlos Moreira;Mascolino;Casado;394.920.504-71;(63)962798238;carlos@moreira.com.br;27021;fisica;10;10
+Carlos Moreira;Masculino;Casado;394.920.504-71;(63)962798238;carlos@moreira.com.br;27021;fisica;10;10
 Ricardo Navalha;Masculino;Casado;390.922.614-08;(51)921695054;ricardo@navalha.com.br;28675;fisica;11;11
 Maria da Conceicao;Feminino;Casado;111.013.726-56;(68)991011168;maria@conceicao.com.br;29850;fisica;12;12
-Carl Max;Mascolino;Casado;482.624.915-21;(88)947378078;carl@max.com.br;24943;7;1;8357
+Carl Max;Masculino;Casado;482.624.915-21;(88)947378078;carl@max.com.br;24943;7;1;8357
 Fernanda Borges;Feminino;Casado;841.071.012-90;(31)966359368;fernanda@borges.com.br;30582;8;2;1867
 Ana Moraes;Feminino;Casado;774.506.744-92;(92)903964525;ana@moraes.com.br;28975;9;3;6894
-Carlos Moreira;Mascolino;Casado;394.920.504-71;(63)962798238;carlos@moreira.com.br;27021;10;4;1380
+Carlos Moreira;Masculino;Casado;394.920.504-71;(63)962798238;carlos@moreira.com.br;27021;10;4;1380
 Ricardo Navalha;Masculino;Casado;390.922.614-08;(51)921695054;ricardo@navalha.com.br;28675;11;5;6843
 Maria da Conceicao;Feminino;Casado;111.013.726-56;(68)991011168;maria@conceicao.com.br;29850;12;6;1223
 Elon Musk;Masculino;Casado;531.614.684-50;(11)997315680;elon@musk.com.us;13;7;6840;42987,3
@@ -35,7 +35,7 @@ Elon Musk;Masculino;Casado;531.614.684-50;(11)997315680;elon@musk.com.us;13;7;68
 4;2;16;0906
 1;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP
 2;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP
-3;13469414;Rua A;7;fundos;Jardim São Roque;Sao Paulo;SP
+3;13469414;Rua A;7;fundos;Jardim Sao Roque;Sao Paulo;SP
 4;13475620;Rua A;35;casa 3;Iate Clube de Campinas;Sao Paulo;SP
 5;13469072;Rua A;18;bl2 ap501;Jardim Miriam;Sao Paulo;SP
 6;13475171;Jardim Miriam;98;cobertura;Iate Clube de Americana;Sao Paulo;SP

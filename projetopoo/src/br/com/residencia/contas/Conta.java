@@ -77,6 +77,23 @@ public abstract class Conta {
 	}
 	
 	
+
+
+
+
+
+
+//	public boolean saldo(double valor) {
+//	if (this.saldo < sacar) {
+//		return false;
+//	} else {
+//		double novoSaldo = this.saldo - valor;
+//		this.saldo = novoSaldo;
+//		return true;
+//	}
+//}
+
+
 	
 //	public boolean sacar(double valor) {
 //	if (this.saldo < valor) {

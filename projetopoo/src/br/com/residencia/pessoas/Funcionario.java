@@ -2,12 +2,14 @@ package br.com.residencia.pessoas;
 
 import java.util.Date;
 
+import br.com.residencia.enums.TipoPessoa;
+
 public abstract class Funcionario extends Pessoa {
 
 	private Integer idFuncionario;
 	private String senha;
 	private Double salario;
-	private String cargo;
+	private String cargo = getTipoPessoa();
 
 	public Funcionario(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
 			Date dataNascimento, String tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
