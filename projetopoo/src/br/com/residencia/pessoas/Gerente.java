@@ -2,13 +2,15 @@ package br.com.residencia.pessoas;
 
 import java.time.LocalDate;
 
+import br.com.residencia.enums.TipoPessoa;
+
 public class Gerente extends Funcionario {
 
 	private Integer idGerente;
 	private Integer idAgencia;
 
 	public Gerente(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			LocalDate dataNascimento, String tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
+			LocalDate dataNascimento, TipoPessoa tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
 			Double salario, String cargo, Integer idGerente, Integer idAgencia) {
 		super(nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, tipoPessoa, idEndereco, idFuncionario,
 				senha, salario, cargo);

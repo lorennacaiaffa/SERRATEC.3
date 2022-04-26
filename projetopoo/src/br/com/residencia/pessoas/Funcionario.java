@@ -2,15 +2,17 @@ package br.com.residencia.pessoas;
 
 import java.time.LocalDate;
 
+import br.com.residencia.enums.TipoPessoa;
+
 public abstract class Funcionario extends Pessoa {
 
 	private Integer idFuncionario;
 	private String senha;
 	private Double salario;
-	private String cargo = getTipoPessoa();
+	private String cargo;
 	
 	public Funcionario(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			LocalDate dataNascimento, String tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
+			LocalDate dataNascimento, TipoPessoa tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
 			Double salario, String cargo) {
 		super(nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, tipoPessoa, idEndereco);
 		this.idFuncionario = idFuncionario;

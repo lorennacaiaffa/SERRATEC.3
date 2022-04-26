@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import br.com.residencia.agencias.Agencia;
+import br.com.residencia.enums.TipoPessoa;
 
 public class Presidente extends Funcionario {
 
@@ -11,7 +12,7 @@ public class Presidente extends Funcionario {
 	List<Agencia> agencia = new ArrayList<>();
 
 	public Presidente(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			LocalDate dataNascimento, String tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
+			LocalDate dataNascimento, TipoPessoa tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
 			Double salario, String cargo, Integer idPresidente, List<Agencia> agencia) {
 		super(nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, tipoPessoa, idEndereco, idFuncionario,
 				senha, salario, cargo);

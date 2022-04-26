@@ -2,6 +2,8 @@ package br.com.residencia.pessoas;
 
 import java.time.LocalDate;
 
+import br.com.residencia.enums.TipoPessoa;
+
 public class Pessoa {
 
 	private String nome;
@@ -11,11 +13,11 @@ public class Pessoa {
 	private String telefone;
 	private String email;
 	private LocalDate dataNascimento;
-	private String tipoPessoa;
+	private TipoPessoa tipoPessoa;
 	private Integer idEndereco;
 
 	public Pessoa(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			LocalDate dataNascimento, String tipoPessoa, Integer idEndereco) {
+			LocalDate dataNascimento, TipoPessoa tipoPessoa, Integer idEndereco) {
 		super();
 		this.nome = nome;
 		this.genero = genero;
@@ -87,11 +89,11 @@ public class Pessoa {
 		this.dataNascimento = dataNascimento;
 	}
 	
-	public String getTipoPessoa() {
+	public TipoPessoa getTipoPessoa() {
 		return tipoPessoa;
 	}
 	
-	public void setTipoPessoa(String tipoPessoa) {
+	public void setTipoPessoa(TipoPessoa tipoPessoa) {
 		this.tipoPessoa = tipoPessoa;
 	}
 
