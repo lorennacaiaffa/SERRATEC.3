@@ -3,8 +3,10 @@ package br.com.residencia.menu;
 import java.util.Scanner;
 
 public class MenuInicial {
-	private String login = "luis";
-	private String senha = "123";
+	String login = "luis";
+	String senha = "123";
+
+	Scanner scan = new Scanner(System.in);
 	
 	public MenuInicial(String login, String senha) {
 		super();
@@ -30,27 +32,53 @@ public class MenuInicial {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
-	public void logar(String login) {
+
+	public void login() {
 		String usuario, chave;
-		do {	
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Bem vindo.");
-		System.out.print("Digite seu CPF: ");
-		usuario = scan.next();
-		System.out.println("Digite sua senha: ");
-		chave = scan.next();
-		scan.close();
-		if(usuario.equals(login) && chave.equals(senha)) {
-			System.out.println("Bem vindo");
-		}
-		
-		for(int i = 0; i < 10; i++);
-		System.out.println(" ");
-		System.out.println("_______________________");
-		}
-		while (!usuario.equals(login) && !chave.equals(senha));	
+		do {
+			System.out.println("===== Bem-vindo ao Banco <Heli/Code>=====\n");
+			System.out.print("Digite seu CPF: ");
+			usuario = scan.next();
+			System.out.print("Digite sua senha: ");
+			chave = scan.next();
+			if (usuario.equals(login) && chave.equals(senha)) {
+				System.out.println("Seja bem-vindo!\n");
+			} else {
+				System.out.println("ERROR");
+				for(int i = 0; i < 20; i++)
+					System.out.println(" ");
+			}
+			System.out.println("__________________________");
+		} while (!usuario.equals(login) || !chave.equals(senha));		
 		
 	}
-	
+	public void menu() {
+		int resp;
+		
+		do {
+			System.out.println("Escolha uma opção:");
+			System.out.println("[1] Saldo\t[2] Sacar\t[3] Depositar\t[4]Trasnferir\t[5] Sair");
+			resp = scan.nextInt();
+			switch(resp) {
+			case 1:
+			break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				
+			}
+			if(resp < 0 || resp > 5) {
+				System.out.println("Escolha uma opção válida.");				
+			}
+			for(int i = 0; i < 20; i++) {
+				System.out.println(" ");				
+			}
+			System.out.println("__________________________");
+		}
+		while (resp < 0 || resp > 5);
+	}	
 }
