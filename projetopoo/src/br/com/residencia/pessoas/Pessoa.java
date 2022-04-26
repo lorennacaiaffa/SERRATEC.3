@@ -1,6 +1,6 @@
 package br.com.residencia.pessoas;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Pessoa {
 
@@ -10,12 +10,12 @@ public class Pessoa {
 	private String cpf;
 	private String telefone;
 	private String email;
-	private Date dataNascimento;
+	private LocalDate dataNascimento;
 	private String tipoPessoa;
 	private Integer idEndereco;
 
 	public Pessoa(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			Date dataNascimento, String tipoPessoa, Integer idEndereco) {
+			LocalDate dataNascimento, String tipoPessoa, Integer idEndereco) {
 		super();
 		this.nome = nome;
 		this.genero = genero;
@@ -58,6 +58,10 @@ public class Pessoa {
 	public String getCpf() {
 		return cpf;
 	}
+	
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 
 	public String getTelefone() {
 		return telefone;
@@ -75,11 +79,11 @@ public class Pessoa {
 		this.email = email;
 	}
 
-	public Date getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	

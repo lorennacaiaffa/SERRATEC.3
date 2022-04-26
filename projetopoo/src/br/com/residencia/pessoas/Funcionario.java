@@ -1,8 +1,6 @@
 package br.com.residencia.pessoas;
 
-import java.util.Date;
-
-import br.com.residencia.enums.TipoPessoa;
+import java.time.LocalDate;
 
 public abstract class Funcionario extends Pessoa {
 
@@ -10,9 +8,9 @@ public abstract class Funcionario extends Pessoa {
 	private String senha;
 	private Double salario;
 	private String cargo = getTipoPessoa();
-
+	
 	public Funcionario(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			Date dataNascimento, String tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
+			LocalDate dataNascimento, String tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
 			Double salario, String cargo) {
 		super(nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, tipoPessoa, idEndereco);
 		this.idFuncionario = idFuncionario;
