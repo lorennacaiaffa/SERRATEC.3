@@ -11,7 +11,7 @@ public class MenuInicial {
 	public MenuInicial(String login, String senha) {
 		super();
 		this.login = login;
-		senha = senha;
+		this.senha = senha;
 	}
 
 	public MenuInicial() {
@@ -36,19 +36,19 @@ public class MenuInicial {
 	public void login() {
 		String usuario, chave;
 		do {
-			System.out.println("===== Bem-vindo ao Banco <Heli/Code>=====\n");
-			System.out.print("Digite seu CPF: ");
+			System.out.println("\t\t\t===== Bem-vindo ao Banco <Heli/Code> =====\n");
+			System.out.print("\t\t\tDigite seu CPF: ");
 			usuario = scan.next();
-			System.out.print("Digite sua senha: ");
+			System.out.print("\t\t\tDigite sua senha: ");
 			chave = scan.next();
 			if (usuario.equals(login) && chave.equals(senha)) {
-				System.out.println("Seja bem-vindo!\n");
+				System.out.println("\n\t\t\t\t==== SEJA BEM-VINDO ====\n");
 			} else {
-				System.out.println("ERROR");
-				for(int i = 0; i < 20; i++)
+				System.out.println("\n\t\tErro, login ou senha incorretos, digite novamente!");
+				for(int i = 0; i < 2; i++)
 					System.out.println(" ");
 			}
-			System.out.println("__________________________");
+			System.out.println("\t\t*********************************************************\n");
 		} while (!usuario.equals(login) || !chave.equals(senha));		
 		
 	}
@@ -56,8 +56,8 @@ public class MenuInicial {
 		int resp;
 		
 		do {
-			System.out.println("Escolha uma opção:");
-			System.out.println("[1] Saldo\t[2] Sacar\t[3] Depositar\t[4]Trasnferir\t[5] Sair");
+			System.out.println("\t\t\t\tEscolha uma opção:\n");
+			System.out.println("\t[1] Saldo\t[2] Sacar\t[3] Depositar\t[4]Trasnferir\t[5] Sair");
 			resp = scan.nextInt();
 			switch(resp) {
 			case 1:
