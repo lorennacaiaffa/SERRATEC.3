@@ -6,12 +6,11 @@ public class Cliente extends Pessoa {
 
 	private Integer idCliente;
 	private Integer idGerente;
-	
+	private Integer idConta;
+
 	public Cliente(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			Date dataNascimento, String tipoPessoa, Integer idEndereco, Integer idCliente, Integer idGerente) {
+			Date dataNascimento, String tipoPessoa, Integer idEndereco) {
 		super(nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, tipoPessoa, idEndereco);
-		this.idCliente = idCliente;
-		this.idGerente = idGerente;
 	}
 
 	public Cliente() {
@@ -29,6 +28,16 @@ public class Cliente extends Pessoa {
 	public void setIdGerente(Integer idGerente) {
 		this.idGerente = idGerente;
 	}
+
+	public Integer getIdConta() {
+		return idConta;
+	}
+
+	public void setIdConta(Integer idConta) {
+		this.idConta = idConta;
+	}
+
+	
 
 	
 }
