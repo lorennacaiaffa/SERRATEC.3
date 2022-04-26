@@ -6,7 +6,7 @@ public abstract class Funcionario extends Pessoa {
 
 	private Integer idFuncionario;
 	private String senha;
-	private Double salario = 1000.0;
+	private Double salario;
 	private String cargo;
 
 	public Funcionario(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,

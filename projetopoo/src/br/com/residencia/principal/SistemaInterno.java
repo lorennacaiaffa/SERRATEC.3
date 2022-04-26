@@ -2,21 +2,21 @@ package br.com.residencia.principal;
 
 import java.io.IOException;
 
+//import br.com.residencia.menu.MenuInicial;
 //import br.com.residencia.agencias.Agencia;
-//import br.com.residencia.projetopoo.io.LeituraEscrita;
-//import br.com.residencia.projetopoo.pessoas.Funcionario;
-//import br.com.residencia.projetopoo.contas.ContaCorrente;
-//import br.com.residencia.projetopoo.contas.ContaPoupanca;
-//import br.com.residencia.projetopoo.pessoas.Cliente;
-//import br.com.residencia.projetopoo.pessoas.Diretor;
-//import br.com.residencia.projetopoo.pessoas.Endereco;
-//import br.com.residencia.projetopoo.pessoas.Gerente;
-//import br.com.residencia.projetopoo.pessoas.Presidente;
+//import br.com.residencia.io.LeituraEscrita;
+//import br.com.residencia.pessoas.Funcionario;
+//import br.com.residencia.contas.ContaCorrente;
+//import br.com.residencia.contas.ContaPoupanca;
+//import br.com.residencia.enderecos.Endereco;
+//import br.com.residencia.pessoas.Cliente;
+//import br.com.residencia.pessoas.Diretor;
+//import br.com.residencia.pessoas.Gerente;
+//import br.com.residencia.pessoas.Presidente;
 
 public class SistemaInterno {
 
 	public static void main(String[] args) throws IOException {
-
 
 
 //		Funcionario funcionario = new Gerente();
@@ -31,6 +31,7 @@ public class SistemaInterno {
 		// Como chamar o método escritor da classe LeituraEscrita
 //		LeituraEscrita.escritor("./");
 
+		
 //	Cliente c1 = new Cliente();
 //	Cliente c2 = new Cliente();
 //	Cliente c3 = new Cliente();
@@ -81,6 +82,7 @@ public class SistemaInterno {
 //	Endereco end14 = new Endereco();
 //	Endereco end15 = new Endereco();
 //	Endereco end16 = new Endereco();
+//	Endereco end17 = new Endereco();
 
 //	Agencia a1 = new Agencia();
 //	Agencia a2 = new Agencia();

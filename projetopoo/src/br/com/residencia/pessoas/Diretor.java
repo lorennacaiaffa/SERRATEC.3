@@ -15,8 +15,7 @@ public class Diretor extends Funcionario {
 	List<Agencia> agencia = new ArrayList<>();// tentar varrer a lista com lenght
 
 	public Diretor(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			Date dataNascimento, String tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
-			String login, Double salario, String cargo, Integer idDiretor, Integer qtdAgencias,
+			Date dataNascimento, String tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha, Double salario, String cargo, Integer idDiretor, Integer qtdAgencias,
 			List<Agencia> agencias) {
 		super(nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, tipoPessoa, idEndereco, idFuncionario,
 				senha, salario, cargo);
