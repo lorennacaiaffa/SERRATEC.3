@@ -1,15 +1,15 @@
 CORRENTE;1;3579;0807;645312;11111;40831;ativo;3400;16,9
 CORRENTE;2;6848;0605;134218;652;43097;ativo;200;0
-CORRENTE;3;1013;0605;684860;9650,25;38840;ativo;1300;0
-CORRENTE;4;4168;0807;873891;4546,1;38546;ativo;800;0
-CORRENTE;5;8438;0605;184893;0;38546;inativo;;0
-CORRENTE;6;1407;0807;187633;35841,9;43148;ativo;5500;50
-POUPANCA;7;9876;0807;681483;16523,2;40500;ativo;1;0,5
-POUPANCA;8;8791;0605;018687;11846,3;41502;ativo;2;0,5
+CORRENTE;3;1013;0707;684860;9650,25;38840;ativo;1300;0
+CORRENTE;4;4168;0906;873891;4546,1;38546;ativo;800;0
+CORRENTE;5;8438;0807;184893;0;38546;inativo;0;0
+CORRENTE;6;1407;0605;187633;35841,9;43148;ativo;5500;50
+POUPANCA;7;9876;0707;681483;16523,2;40500;ativo;1;0,5
+POUPANCA;8;8791;0906;018687;11846,3;41502;ativo;2;0,5
 POUPANCA;9;0548;0807;041687;8678,42;42812;ativo;3;0,5
 POUPANCA;10;9840;0605;874631;17181,1;39770;ativo;4;0,5
-POUPANCA;11;5437;0807;976105;5378,02;43827;ativo;5;0,5
-POUPANCA;12;1515;0605;186308;56786,05;43495;ativo;6;0,5
+POUPANCA;11;5437;0707;976105;5378,02;43827;ativo;5;0,5
+POUPANCA;12;1515;0906;186308;56786,05;43495;ativo;6;0,5
 Antonio Carvalho;Masculino;casado;427.023.800-34;(79)974082508;antonio@carvalho.com.br;26970;fisica;1;1
 Geisa Arruda;Feminino;casada;415.152.239-81;(81)951634156;geisa@arruda.com.br;31902;fisica;2;2
 Carlos Alves;Masculino;solteiro;504.226.587-23;(23)951665656;carlos@alves.com.br;33239;fisica;3;3
@@ -28,8 +28,24 @@ Ana Moraes;Feminino;Casado;774.506.744-92;(92)903964525;ana@moraes.com.br;28975;
 Carlos Moreira;Mascolino;Casado;394.920.504-71;(63)962798238;carlos@moreira.com.br;27021;10;4;1380
 Ricardo Navalha;Masculino;Casado;390.922.614-08;(51)921695054;ricardo@navalha.com.br;28675;11;5;6843
 Maria da Conceicao;Feminino;Casado;111.013.726-56;(68)991011168;maria@conceicao.com.br;29850;12;6;1223
-Elon Musk;Masculino;Casado;531.614.684-50;(11)997315680;elon@musk.com.us;13;7;6840;elonm
+Elon Musk;Masculino;Casado;531.614.684-50;(11)997315680;elon@musk.com.us;13;7;6840;42987,3
 1;1;13;0807
 2;2;14;0605
 3;1;15;0707
 4;2;16;0906
+1;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP
+2;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP
+3;13469414;Rua A;7;fundos;Jardim São Roque;Sao Paulo;SP
+4;13475620;Rua A;35;casa 3;Iate Clube de Campinas;Sao Paulo;SP
+5;13469072;Rua A;18;bl2 ap501;Jardim Miriam;Sao Paulo;SP
+6;13475171;Jardim Miriam;98;cobertura;Iate Clube de Americana;Sao Paulo;SP
+7;13477070;Rua Abelardo Fonseca;17;b1 ap201;Campo Limpo;Sao Paulo;SP
+8;13476651;Rua Abelardo Fonseca;357;fundos;Sao Benedito;Sao Paulo;SP
+9;13466280;Rua Abilio Rodrigues;75;cobertura;Vila Santa Catarina;Sao Paulo;SP
+10;13468150;Rua Abolição;41;portao 1;Jardim Sao Paulo;Sao Paulo;SP
+11;13474763;Rua das Acacias;15;b2 ap200;Loteamento Industrial Salto Grande I;Sao Paulo;SP
+12;13465190;Rua do Acetato;35;casa 1;Vila Medon;Sao Paulo;SP
+13;13475214;Rua Achiles Zanaga;2;sem;Riviera Tamborlim;Sao Paulo;SP
+14;13478320;Rua Achilino Seleghini;14;sem;Nossa Senhora de Fatima;Sao Paulo;SP
+15;1045001;Praca da Republica;74;sem;Republica;Sao Paulo;SP
+16;3318000;Rua Serra de Bragança;19;sem;Vila Gomes Cardim;Sao Paulo;SP
