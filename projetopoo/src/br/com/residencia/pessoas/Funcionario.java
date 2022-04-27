@@ -2,23 +2,21 @@ package br.com.residencia.pessoas;
 
 import java.time.LocalDate;
 
-import br.com.residencia.enums.TipoPessoa;
+import br.com.residencia.enums.TipoUsuario;
 
-public abstract class Funcionario extends Pessoa {
+public class Funcionario extends Pessoa {
 
 	private Integer idFuncionario;
 	private String senha;
 	private Double salario;
-	private String cargo;
-	
-	public Funcionario(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			LocalDate dataNascimento, TipoPessoa tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
-			Double salario, String cargo) {
-		super(nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, tipoPessoa, idEndereco);
+
+	public Funcionario(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf,
+			String telefone, String email, LocalDate dataNascimento, Integer idEndereco, Integer idFuncionario,
+			String senha, Double salario) {
+		super(tipoUsuario, nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, idEndereco);
 		this.idFuncionario = idFuncionario;
 		this.senha = senha;
 		this.salario = salario;
-		this.cargo = cargo;
 	}
 
 	public Funcionario() {
@@ -43,14 +41,6 @@ public abstract class Funcionario extends Pessoa {
 
 	public void setSalario(Double salario) {
 		this.salario = salario;
-	}
-
-	public String getCargo() {
-		return cargo;
-	}
-
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
 	}
 
 }

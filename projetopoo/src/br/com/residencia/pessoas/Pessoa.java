@@ -2,10 +2,11 @@ package br.com.residencia.pessoas;
 
 import java.time.LocalDate;
 
-import br.com.residencia.enums.TipoPessoa;
+import br.com.residencia.enums.TipoUsuario;
 
-public class Pessoa {
+public abstract class Pessoa {
 
+	private TipoUsuario tipoUsuario;
 	private String nome;
 	private String genero;
 	private String estadoCivil;
@@ -13,12 +14,14 @@ public class Pessoa {
 	private String telefone;
 	private String email;
 	private LocalDate dataNascimento;
-	private TipoPessoa tipoPessoa;
 	private Integer idEndereco;
 
-	public Pessoa(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			LocalDate dataNascimento, TipoPessoa tipoPessoa, Integer idEndereco) {
+	
+
+	public Pessoa(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
+			String email, LocalDate dataNascimento, Integer idEndereco) {
 		super();
+		this.tipoUsuario = tipoUsuario;
 		this.nome = nome;
 		this.genero = genero;
 		this.estadoCivil = estadoCivil;
@@ -29,10 +32,14 @@ public class Pessoa {
 		this.idEndereco = idEndereco;
 	}
 
-	public Pessoa () {
-		
+	public Pessoa() {
+
 	}
 
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -60,7 +67,7 @@ public class Pessoa {
 	public String getCpf() {
 		return cpf;
 	}
-	
+
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
@@ -88,18 +95,9 @@ public class Pessoa {
 	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	
-	public TipoPessoa getTipoPessoa() {
-		return tipoPessoa;
-	}
-	
-	public void setTipoPessoa(TipoPessoa tipoPessoa) {
-		this.tipoPessoa = tipoPessoa;
-	}
 
 	public Integer getIdEndereco() {
 		return idEndereco;
 	}
 
-	
 }

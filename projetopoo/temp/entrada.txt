@@ -1,51 +1,51 @@
-ContaCorrente;1;3579;0807;645312;11111;40831;ativo;3400;16,9
-ContaCorrente;2;6848;0605;134218;652;43097;ativo;200;0
-ContaCorrente;3;1013;0707;684860;9650,25;38840;ativo;1300;0
-ContaCorrente;4;4168;0906;873891;4546,1;38546;ativo;800;0
-ContaCorrente;5;8438;0807;184893;0;38546;inativo;0;0
-ContaCorrente;6;1407;0605;187633;35841,9;43148;ativo;5500;50
-ContaPoupanca;7;9876;0707;681483;16523,2;40500;ativo;1;0,5
-ContaPoupanca;8;8791;0906;018687;11846,3;41502;ativo;2;0,5
-ContaPoupanca;9;0548;0807;041687;8678,42;42812;ativo;3;0,5
-ContaPoupanca;10;9840;0605;874631;17181,1;39770;ativo;4;0,5
-ContaPoupanca;11;5437;0707;976105;5378,02;43827;ativo;5;0,5
-ContaPoupanca;12;1515;0906;186308;56786,05;43495;ativo;6;0,5
-Cliente;Antonio Carvalho;Masculino;casado;427.023.800-34;(79)974082508;antonio@carvalho.com.br;26970;fisica;1;1
-Cliente;Geisa Arruda;Feminino;casada;415.152.239-81;(81)951634156;geisa@arruda.com.br;31902;fisica;2;2
-Cliente;Carlos Alves;Masculino;solteiro;504.226.587-23;(23)951665656;carlos@alves.com.br;33239;fisica;3;3
-Cliente;Joao Goncalves;Masculino;divorciado;579.809.818-47;(47)994204156;joao@gonçalves.com.br;34420;fisica;4;4
-Cliente;Jose Batista;Masculino;solteiro;967.414.295-90;(90)968541610;jose@batista.com.br;27393;fisica;5;5
-Cliente;Aline Freitas;Feminino;casada;846.858.824-08;(22)938516843;aline@freitas.com.br;32739;fisica;6;6
-Cliente;Carl Max;Mascolino;Casado;482.624.915-21;(88)947378078;carl@max.com.br;24943;fisica;7;7
-Cliente;Fernanda Borges;Feminino;Casado;841.071.012-90;(31)966359368;fernanda@borges.com.br;30582;fisica;8;8
-Cliente;Ana Moraes;Feminino;Casado;774.506.744-92;(92)903964525;ana@moraes.com.br;28975;fisica;9;9
-Cliente;Carlos Moreira;Mascolino;Casado;394.920.504-71;(63)962798238;carlos@moreira.com.br;27021;fisica;10;10
-Cliente;Ricardo Navalha;Masculino;Casado;390.922.614-08;(51)921695054;ricardo@navalha.com.br;28675;fisica;11;11
-Cliente;Maria da Conceicao;Feminino;Casado;111.013.726-56;(68)991011168;maria@conceicao.com.br;29850;fisica;12;12
-Gerente;Carl Max;Mascolino;Casado;482.624.915-21;(88)947378078;carl@max.com.br;24943;7;1;8357
-Gerente;Fernanda Borges;Feminino;Casado;841.071.012-90;(31)966359368;fernanda@borges.com.br;30582;8;2;1867
-Gerente;Ana Moraes;Feminino;Casado;774.506.744-92;(92)903964525;ana@moraes.com.br;28975;9;3;6894
-Gerente;Carlos Moreira;Mascolino;Casado;394.920.504-71;(63)962798238;carlos@moreira.com.br;27021;10;4;1380
-Diretor;Ricardo Navalha;Masculino;Casado;390.922.614-08;(51)921695054;ricardo@navalha.com.br;28675;11;5;6843
-Diretor;Maria da Conceicao;Feminino;Casado;111.013.726-56;(68)991011168;maria@conceicao.com.br;29850;12;6;1223
-Presidente;Elon Musk;Masculino;Casado;531.614.684-50;(11)997315680;elon@musk.com.us;13;7;6840;42987,3
-Agencia;1;1;13;0807;;;;;;
-Agencia;2;2;14;0605;;;;;;
-Agencia;3;1;15;0707;;;;;;
-Agencia;4;2;16;0906;;;;;;
-Endereco;1;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP;;
-Endereco;2;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP;;
-Endereco;3;13469414;Rua A;7;fundos;Jardim São Roque;Sao Paulo;SP;;
-Endereco;4;13475620;Rua A;35;casa 3;Iate Clube de Campinas;Sao Paulo;SP;;
-Endereco;5;13469072;Rua A;18;bl2 ap501;Jardim Miriam;Sao Paulo;SP;;
-Endereco;6;13475171;Jardim Miriam;98;cobertura;Iate Clube de Americana;Sao Paulo;SP;;
-Endereco;7;13477070;Rua Abelardo Fonseca;17;b1 ap201;Campo Limpo;Sao Paulo;SP;;
-Endereco;8;13476651;Rua Abelardo Fonseca;357;fundos;Sao Benedito;Sao Paulo;SP;;
-Endereco;9;13466280;Rua Abilio Rodrigues;75;cobertura;Vila Santa Catarina;Sao Paulo;SP;;
-Endereco;10;13468150;Rua Abolição;41;portao 1;Jardim Sao Paulo;Sao Paulo;SP;;
-Endereco;11;13474763;Rua das Acacias;15;b2 ap200;Loteamento Industrial Salto Grande I;Sao Paulo;SP;;
-Endereco;12;13465190;Rua do Acetato;35;casa 1;Vila Medon;Sao Paulo;SP;;
-Endereco;13;13475214;Rua Achiles Zanaga;2;sem;Riviera Tamborlim;Sao Paulo;SP;;
-Endereco;14;13478320;Rua Achilino Seleghini;14;sem;Nossa Senhora de Fatima;Sao Paulo;SP;;
-Endereco;15;1045001;Praca da Republica;74;sem;Republica;Sao Paulo;SP;;
-Endereco;16;3318000;Rua Serra de Bragança;19;sem;Vila Gomes Cardim;Sao Paulo;SP;;
+CORRENTE;1;3579;0807;645312;11111;40831;ativo;3400;16.9
+CORRENTE;2;6848;0605;134218;652;43097;ativo;200;0
+CORRENTE;3;1013;0707;684860;9650.25;38840;ativo;1300;0
+CORRENTE;4;4168;0906;873891;4546.1;38546;ativo;800;0
+CORRENTE;5;8438;0807;184893;0;38546;inativo;0;0
+CORRENTE;6;1407;0605;187633;35841.9;43148;ativo;5500;50
+POUPANCA;7;9876;0707;681483;16523.2;40500;ativo;1;0.5
+POUPANCA;8;8791;0906;018687;11846.3;41502;ativo;2;0.5
+POUPANCA;9;0548;0807;041687;8678.42;42812;ativo;3;0.5
+POUPANCA;10;9840;0605;874631;17181.1;39770;ativo;4;0.5
+POUPANCA;11;5437;0707;976105;5378.02;43827;ativo;5;0.5
+POUPANCA;12;1515;0906;186308;56786.05;43495;ativo;6;0.5
+CLIENTE;Antonio Carvalho;Masculino;casado;42702380034;(79)974082508;antonio@carvalho.com.br;02/11/1973;1;1;1;1;1234
+CLIENTE;Geisa Arruda;Feminino;casada;41515223981;(81)951634156;geisa@arruda.com.br;05/05/1987;2;2;2;2;1235
+CLIENTE;Carlos Alves;Masculino;solteiro;50422658723;(23)951665656;carlos@alves.com.br;01/01/1991;3;3;3;3;1236
+CLIENTE;Joao Goncalves;Masculino;divorciado;57980981847;(47)994204156;joao@gonçalves.com.br;27/03/1994;4;4;4;4;1237
+CLIENTE;Jose Batista;Masculino;solteiro;96741429590;(90)968541610;jose@batista.com.br;30/12/1974;5;5;1;5;1238
+CLIENTE;Aline Freitas;Feminino;casada;84685882408;(22)938516843;aline@freitas.com.br;19/08/1989;6;6;2;6;1239
+CLIENTE;Carl Max;Mascolino;Casado;48262491521;(88)947378078;carl@max.com.br;15/04/1968;7;7;3;7;1210
+CLIENTE;Fernanda Borges;Feminino;Casado;84107101290;(31)966359368;fernanda@borges.com.br;23/09/1983;8;8;4;8;1211
+CLIENTE;Ana Moraes;Feminino;Casado;77450674492;(92)903964525;ana@moraes.com.br;30/04/1979;9;9;1;9;1212
+CLIENTE;Carlos Moreira;Mascolino;Casado;39492050471;(63)962798238;carlos@moreira.com.br;30/04/1979;10;10;2;10;1213
+CLIENTE;Ricardo Navalha;Masculino;Casado;39092261408;(51)921695054;ricardo@navalha.com.br;23/12/1973;11;11;3;11;1214
+CLIENTE;Maria da Conceicao;Feminino;Casado;11101372656;(68)991011168;maria@conceicao.com.br;04/07/1978;12;12;4;12;1215
+GERENTE;Carl Max;Mascolino;Casado;48262491521;(88)947378078;carl@max.com.br;15/04/1968;24943;1;8357;21/09/1981.14;1;1
+GERENTE;Fernanda Borges;Feminino;Casado;84107101290;(31)966359368;fernanda@borges.com.br;23/09/1983;30582;2;1867;8843.32;2;2
+GERENTE;Ana Moraes;Feminino;Casado;77450674492;(92)903964525;ana@moraes.com.br;30/04/1979;28975;3;6894;6385;3;3
+GERENTE;Carlos Moreira;Mascolino;Casado;39492050471;(63)962798238;carlos@moreira.com.br;27021;27021;4;1380;7156.98;4;4
+DIRETOR;Ricardo Navalha;Masculino;Casado;39092261408;(51)921695054;ricardo@navalha.com.br;23/12/1973;11;5;6843;28632.4;1;2
+DIRETOR;Maria da Conceicao;Feminino;Casado;11101372656;(68)991011168;maria@conceicao.com.br;04/07/1978;12;6;1223;29243.1;2;2
+PRESIDENTE;Elon Musk;Masculino;Casado;53161468450;(11)997315680;elon@musk.com.us;15/01/1979;13;7;6840;42987.3;1
+ENDERECO;1;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP
+ENDERECO;2;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP
+ENDERECO;3;13469414;Rua A;7;fundos;Jardim Sao Roque;Sao Paulo;SP
+ENDERECO;4;13475620;Rua A;35;casa 3;Iate Clube de Campinas;Sao Paulo;SP
+ENDERECO;5;13469072;Rua A;18;bl2 ap501;Jardim Miriam;Sao Paulo;SP
+ENDERECO;6;13475171;Jardim Miriam;98;cobertura;Iate Clube de Americana;Sao Paulo;SP
+ENDERECO;7;13477070;Rua Abelardo Fonseca;17;b1 ap201;Campo Limpo;Sao Paulo;SP
+ENDERECO;8;13476651;Rua Abelardo Fonseca;357;fundos;Sao Benedito;Sao Paulo;SP
+ENDERECO;9;13466280;Rua Abilio Rodrigues;75;cobertura;Vila Santa Catarina;Sao Paulo;SP
+ENDERECO;10;13468150;Rua Abolição;41;portao 1;Jardim Sao Paulo;Sao Paulo;SP
+ENDERECO;11;13474763;Rua das Acacias;15;b2 ap200;Loteamento Industrial Salto Grande I;Sao Paulo;SP
+ENDERECO;12;13465190;Rua do Acetato;35;casa 1;Vila Medon;Sao Paulo;SP
+ENDERECO;13;13475214;Rua Achiles Zanaga;2;sem;Riviera Tamborlim;Sao Paulo;SP
+ENDERECO;14;13478320;Rua Achilino Seleghini;14;sem;Nossa Senhora de Fatima;Sao Paulo;SP
+ENDERECO;15;1045001;Praca da Republica;74;sem;Republica;Sao Paulo;SP
+ENDERECO;16;3318000;Rua Serra de Bragança;19;sem;Vila Gomes Cardim;Sao Paulo;SP
+AGENCIA;1;1;13;0807
+AGENCIA;2;2;14;0605
+AGENCIA;3;1;15;0707
+AGENCIA;4;2;16;0906

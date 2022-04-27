@@ -4,5 +4,5 @@ public enum TipoUsuario {
 	CLIENTE,
 	GERENTE,
 	DIRETOR,
-	PRESIDENTE
+	PRESIDENTE,
 }

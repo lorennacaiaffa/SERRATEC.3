@@ -2,7 +2,7 @@ package br.com.residencia.pessoas;
 
 import java.time.LocalDate;
 
-import br.com.residencia.enums.TipoPessoa;
+import br.com.residencia.enums.TipoUsuario;
 
 public class Cliente extends Pessoa {
 
@@ -11,10 +11,10 @@ public class Cliente extends Pessoa {
 	private Integer idConta;
 	private String senhaCliente;
 
-	public Cliente(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			LocalDate dataNascimento, TipoPessoa tipoPessoa, Integer idEndereco, Integer idCliente, Integer idGerente,
+	public Cliente(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
+			String email, LocalDate dataNascimento, Integer idEndereco, Integer idCliente, Integer idGerente,
 			Integer idConta, String senhaCliente) {
-		super(nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, tipoPessoa, idEndereco);
+		super(tipoUsuario, nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, idEndereco);
 		this.idCliente = idCliente;
 		this.idGerente = idGerente;
 		this.idConta = idConta;
@@ -22,7 +22,7 @@ public class Cliente extends Pessoa {
 	}
 
 	public Cliente() {
-		
+
 	}
 
 	public Integer getIdCliente() {
@@ -44,7 +44,7 @@ public class Cliente extends Pessoa {
 	public void setIdConta(Integer idConta) {
 		this.idConta = idConta;
 	}
-	
+
 	public String senhaCliente() {
 		return senhaCliente;
 	}

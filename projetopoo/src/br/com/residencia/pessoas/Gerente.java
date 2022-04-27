@@ -2,24 +2,24 @@ package br.com.residencia.pessoas;
 
 import java.time.LocalDate;
 
-import br.com.residencia.enums.TipoPessoa;
+import br.com.residencia.enums.TipoUsuario;
 
 public class Gerente extends Funcionario {
 
 	private Integer idGerente;
 	private Integer idAgencia;
 
-	public Gerente(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			LocalDate dataNascimento, TipoPessoa tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
-			Double salario, String cargo, Integer idGerente, Integer idAgencia) {
-		super(nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, tipoPessoa, idEndereco, idFuncionario,
-				senha, salario, cargo);
+	public Gerente(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
+			String email, LocalDate dataNascimento, Integer idEndereco, Integer idFuncionario, String senha,
+			Double salario, Integer idGerente, Integer idAgencia) {
+		super(tipoUsuario, nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, idEndereco, idFuncionario,
+				senha, salario);
 		this.idGerente = idGerente;
 		this.idAgencia = idAgencia;
 	}
 
 	public Gerente() {
-		
+
 	}
 
 	public Integer getIdGerente() {
@@ -33,6 +33,5 @@ public class Gerente extends Funcionario {
 	public void setIdAgencia(Integer idAgencia) {
 		this.idAgencia = idAgencia;
 	}
-	
-	
+
 }
