@@ -1,6 +1,5 @@
 package br.com.residencia.pessoas;
 
-import java.time.LocalDate;
 
 import br.com.residencia.enums.TipoUsuario;
 
@@ -10,7 +9,7 @@ public class Gerente extends Funcionario {
 	private Integer idAgencia;
 
 	public Gerente(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
-			String email, LocalDate dataNascimento, Integer idEndereco, Integer idFuncionario, String senha,
+			String email, String dataNascimento, Integer idEndereco, Integer idFuncionario, String senha,
 			Double salario, Integer idGerente, Integer idAgencia) {
 		super(tipoUsuario, nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, idEndereco, idFuncionario,
 				senha, salario);

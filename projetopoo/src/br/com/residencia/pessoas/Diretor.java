@@ -1,6 +1,5 @@
 package br.com.residencia.pessoas;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import br.com.residencia.agencias.Agencia;
@@ -15,7 +14,7 @@ public class Diretor extends Funcionario {
 	List<Agencia> agencia = new ArrayList<>();// tentar varrer a lista com lenght
 
 	public Diretor(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
-			String email, LocalDate dataNascimento, Integer idEndereco, Integer idFuncionario, String senha,
+			String email, String dataNascimento, Integer idEndereco, Integer idFuncionario, String senha,
 			Double salario, Integer idDiretor, Integer qtdAgencia) {
 		super(tipoUsuario, nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, idEndereco, idFuncionario,
 				senha, salario);
