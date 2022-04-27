@@ -1,40 +1,15 @@
 package br.com.residencia.menu;
 
+import java.io.Reader;
 import java.util.Scanner;
 
 public class MenuInicial {
-	String login;
-	String senha;
 
 	Scanner scan = new Scanner(System.in);
 
-	public MenuInicial(String login, String senha) {
-		super();
-		this.login = login;
-		this.senha = senha;
-	}
-
-	public MenuInicial() {
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public void login() {
+		public void login() {
 		String usuario, chave;
+		String login = "luis", senha = "123";
 		
 		do {
 			System.out.println("\t\t\t===== Bem-vindo ao Banco <Heli/Code> =====\n");
@@ -42,13 +17,14 @@ public class MenuInicial {
 			usuario = scan.next();
 			System.out.print("\t\t\tDigite sua senha: ");
 			chave = scan.next();
-			if (usuario.equals(login) && chave.equals(senha)) {
-				System.out.println("\n\t\t\t\t==== SEJA BEM-VINDO ====\n");
-			} else {
-				System.out.println("\n\t\tErro, login ou senha incorretos, digite novamente!");
-				for (int i = 0; i < 2; i++)
+					if (usuario.equals(login) && chave.equals(senha)) {
+					System.out.println("\n\t\t\t\t==== SEJA BEM-VINDO ====\n");
+			} 		else {
+					System.out.println("\n\t\tErro, login ou senha incorretos, digite novamente!");
+					for (int i = 0; i < 2; i++)
 					System.out.println(" ");
 			}
+			
 			System.out.println("\t\t*********************************************************\n");
 		} while (!usuario.equals(login) || !chave.equals(senha));
 
