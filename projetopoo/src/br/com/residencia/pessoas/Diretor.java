@@ -4,23 +4,24 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import br.com.residencia.agencias.Agencia;
+import br.com.residencia.enums.TipoUsuario;
 
 public class Diretor extends Funcionario {
 
 	private Integer idDiretor;
-	private Integer qtdAgencia; 
+	private Integer qtdAgencia;
 	// count diretor bateu, soma mais um for 1=0 até comprimento da lista e vai
 	// incremetar
 	List<Agencia> agencia = new ArrayList<>();// tentar varrer a lista com lenght
 
-	public Diretor(String nome, String genero, String estadoCivil, String cpf, String telefone, String email,
-			LocalDate dataNascimento, String tipoPessoa, Integer idEndereco, Integer idFuncionario, String senha,
-			Double salario, String cargo, Integer idDiretor, Integer qtdAgencia, List<Agencia> agencia) {
-		super(nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, tipoPessoa, idEndereco, idFuncionario,
-				senha, salario, cargo);
+	public Diretor(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
+			String email, LocalDate dataNascimento, Integer idEndereco, Integer idFuncionario, String senha,
+			Double salario, Integer idDiretor, Integer qtdAgencia) {
+		super(tipoUsuario, nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, idEndereco, idFuncionario,
+				senha, salario);
 		this.idDiretor = idDiretor;
 		this.qtdAgencia = qtdAgencia;
-		this.agencia = agencia;
+		this.agencia = new ArrayList<Agencia>();
 	}
 
 	public Diretor() {
@@ -43,8 +44,7 @@ public class Diretor extends Funcionario {
 		return agencia;
 	}
 
-	public void setAgencias(List<Agencia> agencia) {
-		this.agencia = agencia;
+	public void addToAgencia(Agencia agencia) {
+		this.agencia.add (agencia);
 	}
-
 }
