@@ -47,4 +47,10 @@ public class Diretor extends Funcionario {
 	public void addToAgencia(Agencia agencia) {
 		this.agencia.add (agencia);
 	}
+
+	@Override
+	public String toString() {
+		return "Diretor [idDiretor=" + idDiretor + ", qtdAgencia=" + qtdAgencia + ", agencia=" + agencia + "]";
+	}
+
 }
