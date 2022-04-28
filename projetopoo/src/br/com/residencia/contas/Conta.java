@@ -75,6 +75,7 @@ public abstract class Conta {
 	}
 
 
+
 	public Double saldo(double saldo) {
 		return this.saldo;
 	}
@@ -109,13 +110,46 @@ public abstract class Conta {
 //		for( Conta conta1: LeituraEscrita.contaPoupancas)
 //			
 //			
-//			System.out.println("Digite a agencia Destinatária: ");
+//			System.out.println("Digite a agencia Destinatï¿½ria: ");
 //			resp1 = sc.next();
-//			System.out.println("Digite a agencia Destinatária: ");
+//			System.out.println("Digite a agencia Destinatï¿½ria: ");
 //			resp2 = sc.next();			
-//			System.out.println("Digite a agencia Destinatária: ");
+//			System.out.println("Digite a agencia Destinatï¿½ria: ");
 //			resp3 = sc.next();			
 //		
+
+//	public void saldo() {
+//		if (idCliente < 7) {
+//		ContaCorrente cntc = new ContaCorrente();
+//		cntc.saldo();
+//	}
+//
+//		else {
+//	ContaPoupanca cntp = new ContaPoupanca();cntp.saldo();
+//	}}
+//
+//	public boolean sacar(double valor) {
+//		if (this.saldo < valor) {
+//			return false;
+//		} else {
+//			double novoSaldo = this.saldo - valor;
+//			this.saldo = novoSaldo;
+//			return true;
+//		}
+//	}
+//
+//	public boolean depositar(double valor) {
+//		if (0 > valor) {
+//			return false;
+//		} else {
+//			double novoSaldo = this.saldo + valor;
+//			this.saldo = novoSaldo;
+//			return true;
+//		}
+//	}
+//
+//	public boolean transferir(ContaCorrente suaConta, double valor) {
+
 //		if (this.saldo < valor) {
 //			System.out.println("Saldo insuficiente");
 //			return false;

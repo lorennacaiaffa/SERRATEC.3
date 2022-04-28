@@ -62,7 +62,15 @@ public class LeituraEscrita {
 			linha = buffRead.readLine();
 			if (linha != null) {
 				String[] vetor = linha.split(";");
-
+//				List<String> lista = new ArrayList<>();
+//				for(int i = 0; i < vetor.length; i ++) {
+//				lista.add(vetor[i]);
+//				}
+//					
+//				if (lista.get(0).equalsIgnoreCase("Corrente")) {
+//					contaCorrente.add(new ContaCorrente(TipoConta.CORRENTE, Integer.parseInt(lista.get(1)), lista.get(2), lista.get(3), lista.get(4), Double.parseDouble(lista.get(5)), lista.get(6), Boolean.parseBoolean(lista.get(7)), Integer.parseInt(lista.get(8)), Double.parseDouble(lista.get(9)), null));
+//					lista.clear();
+				
 				if (vetor[0].equalsIgnoreCase("Corrente")) {
 					contaCorrentes.add(new ContaCorrente(TipoConta.CORRENTE, Integer.parseInt(vetor[1]), vetor[2],
 							vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6], Boolean.parseBoolean(vetor[7]),
@@ -76,10 +84,14 @@ public class LeituraEscrita {
 							vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]),
 							Integer.parseInt(vetor[10]), Integer.parseInt(vetor[11]), vetor[12]));
 				} else if (vetor[0].equalsIgnoreCase("Gerente")) {
+
 					gerentes.add(new Gerente(TipoUsuario.GERENTE, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5],
 							vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]),
 							vetor[10], Double.parseDouble(vetor[11]), Integer.parseInt(vetor[12]),
 							Integer.parseInt(vetor[13])));
+
+					gerente.add(new Gerente(TipoUsuario.GERENTE, vetor[1], vetor[2], vetor[3], vetor[4],vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]), vetor[10], Double.parseDouble(vetor[11]), Integer.parseInt(vetor[12]),Integer.parseInt(vetor[13])));
+
 				} else if (vetor[0].equalsIgnoreCase("Diretor")) {
 					diretores.add(new Diretor(TipoUsuario.DIRETOR, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5],
 							vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]),
@@ -99,6 +111,7 @@ public class LeituraEscrita {
 				} else {
 					break;
 				}
+
 			} else {
 				break;
 			}
