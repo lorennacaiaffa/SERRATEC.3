@@ -25,6 +25,15 @@ public class LeituraEscrita {
 	final static String PATH_BASICO = "./temp/";
 	final static String EXTENSAO = ".txt";
 
+	public static List<Cliente> clientes = new ArrayList<>();
+	public static List<ContaCorrente> contaCorrentes = new ArrayList<>();
+	public static List<ContaPoupanca> contaPoupancas = new ArrayList<>();
+	public static List<Gerente> gerentes = new ArrayList<>();
+	public static List<Diretor> diretores = new ArrayList<>();
+	public static List<Presidente> presidentes = new ArrayList<>();
+	public static List<Endereco> enderecos = new ArrayList<>();
+	public static List<Agencia> agencias = new ArrayList<>();
+
 	public static void escritor(String path) throws IOException {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Escreva o nome do arquivo: ");
@@ -45,22 +54,13 @@ public class LeituraEscrita {
 
 	public static void leitor(String path) throws IOException {
 
-		List<ContaCorrente> contaCorrente = new ArrayList<>();
-		List<ContaPoupanca> contaPoupanca = new ArrayList<>();
-		List<Cliente> cliente = new ArrayList<>();
-		List<Gerente> gerente = new ArrayList<>();
-		List<Diretor> diretor = new ArrayList<>();
-		List<Presidente> presidente = new ArrayList<>();
-		List<Endereco> endereco = new ArrayList<>();
-		List<Agencia> agencia = new ArrayList<>();
-
 		BufferedReader buffRead = new BufferedReader(new FileReader(PATH_BASICO + path));
 		String linha = "";
+		
 
 		while (true) {
 			linha = buffRead.readLine();
 			if (linha != null) {
-
 				String[] vetor = linha.split(";");
 //				List<String> lista = new ArrayList<>();
 //				for(int i = 0; i < vetor.length; i ++) {
@@ -72,26 +72,51 @@ public class LeituraEscrita {
 //					lista.clear();
 				
 				if (vetor[0].equalsIgnoreCase("Corrente")) {
-					contaCorrente.add(new ContaCorrente(TipoConta.CORRENTE, Integer.parseInt(vetor[1]), vetor[2], vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6], Boolean.parseBoolean(vetor[7]), Integer.parseInt(vetor[8]), Double.parseDouble(vetor[9]), Double.parseDouble(vetor[10])));
+					contaCorrentes.add(new ContaCorrente(TipoConta.CORRENTE, Integer.parseInt(vetor[1]), vetor[2],
+							vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6], Boolean.parseBoolean(vetor[7]),
+							Integer.parseInt(vetor[8]), Double.parseDouble(vetor[9]), Double.parseDouble(vetor[10])));
 				} else if (vetor[0].equalsIgnoreCase("Poupanca")) {
-					contaPoupanca.add(new ContaPoupanca(TipoConta.POUPANCA, Integer.parseInt(vetor[1]), vetor[2], vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6], Boolean.parseBoolean(vetor[7]), Integer.parseInt(vetor[8]), Double.parseDouble(vetor[9])));
+					contaPoupancas.add(new ContaPoupanca(TipoConta.POUPANCA, Integer.parseInt(vetor[1]), vetor[2],
+							vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6], Boolean.parseBoolean(vetor[7]),
+							Integer.parseInt(vetor[8]), Double.parseDouble(vetor[9])));
 				} else if (vetor[0].equalsIgnoreCase("Cliente")) {
-					cliente.add(new Cliente(TipoUsuario.CLIENTE, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]), Integer.parseInt(vetor[10]), Integer.parseInt(vetor[11]), vetor[12]));
+					clientes.add(new Cliente(TipoUsuario.CLIENTE, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5],
+							vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]),
+							Integer.parseInt(vetor[10]), Integer.parseInt(vetor[11]), vetor[12]));
 				} else if (vetor[0].equalsIgnoreCase("Gerente")) {
+
+					gerentes.add(new Gerente(TipoUsuario.GERENTE, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5],
+							vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]),
+							vetor[10], Double.parseDouble(vetor[11]), Integer.parseInt(vetor[12]),
+							Integer.parseInt(vetor[13])));
+
 					gerente.add(new Gerente(TipoUsuario.GERENTE, vetor[1], vetor[2], vetor[3], vetor[4],vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]), vetor[10], Double.parseDouble(vetor[11]), Integer.parseInt(vetor[12]),Integer.parseInt(vetor[13])));
+
 				} else if (vetor[0].equalsIgnoreCase("Diretor")) {
-					diretor.add(new Diretor(TipoUsuario.DIRETOR, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]), vetor[10], Double.parseDouble(vetor[11]), Integer.parseInt(vetor[12]), Integer.parseInt(vetor[13])));
+					diretores.add(new Diretor(TipoUsuario.DIRETOR, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5],
+							vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]),
+							vetor[10], Double.parseDouble(vetor[11]), Integer.parseInt(vetor[12]),
+							Integer.parseInt(vetor[13])));
 				} else if (vetor[0].equalsIgnoreCase("Presidente")) {
-					presidente.add(new Presidente(TipoUsuario.PRESIDENTE, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]), vetor[10], Double.parseDouble(vetor[11]), Integer.parseInt(vetor[12])));
+					presidentes.add(new Presidente(TipoUsuario.PRESIDENTE, vetor[1], vetor[2], vetor[3], vetor[4],
+							vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]),
+							Integer.parseInt(vetor[9]), vetor[10], Double.parseDouble(vetor[11]),
+							Integer.parseInt(vetor[12])));
 				} else if (vetor[0].equalsIgnoreCase("Endereco")) {
-					endereco.add(new Endereco(Integer.parseInt(vetor[1]), vetor[2], vetor[3], Integer.parseInt(vetor[4]), vetor[5], vetor[6], vetor[7], vetor[8]));
+					enderecos.add(new Endereco(Integer.parseInt(vetor[1]), vetor[2], vetor[3],
+							Integer.parseInt(vetor[4]), vetor[5], vetor[6], vetor[7], vetor[8]));
 				} else if (vetor[0].equalsIgnoreCase("Agencia")) {
-					agencia.add(new Agencia(Integer.parseInt(vetor[1]), Integer.parseInt(vetor[2]), Integer.parseInt(vetor[3]), Integer.parseInt(vetor[4])));
+					agencias.add(new Agencia(Integer.parseInt(vetor[1]), Integer.parseInt(vetor[2]),
+							Integer.parseInt(vetor[3]), Integer.parseInt(vetor[4])));
 				} else {
 					break;
 				}
+
+			} else {
+				break;
 			}
 		}
+	
 		buffRead.close();
 	}
 }

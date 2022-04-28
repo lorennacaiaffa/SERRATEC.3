@@ -1,8 +1,10 @@
 package br.com.residencia.contas;
 
+import java.util.Scanner;
+
 import br.com.residencia.enums.TipoConta;
-//import br.com.residencia.principal.ContaCorrente;
-//import br.com.residencia.principal.ContaPoupanca;
+import br.com.residencia.io.LeituraEscrita;
+import br.com.residencia.menu.MenuInicial;
 
 public abstract class Conta {
 
@@ -60,10 +62,6 @@ public abstract class Conta {
 		return saldo;
 	}
 
-	public void setSaldo(Double saldo) {
-		this.saldo = saldo;
-	}
-
 	public String getDataAbertura() {
 		return dataAbertura;
 	}
@@ -76,6 +74,49 @@ public abstract class Conta {
 		this.status = status;
 	}
 
+
+
+	public Double saldo(double saldo) {
+		return this.saldo;
+	}
+
+	public boolean sacar(double valor) {
+		if (this.saldo < valor) {
+			System.out.println("Saldo insuficiente.");
+			return false;
+		} else {
+			double novoSaldo = this.saldo - valor - 0.10;
+			this.saldo = novoSaldo;
+			return true;
+		}
+	}
+
+	public boolean depositar(double valor) {
+		if (0 > valor) {
+			return false;
+		} else {
+			double novoSaldo = this.saldo + valor - 0.10;
+			this.saldo = novoSaldo;
+			return true;
+		}
+	}
+
+//	public boolean transferir(Conta numeroAgencia,Conta numeroConta, double valor) {
+//		String resp1, resp2, resp3;
+//		
+//		Scanner sc = new Scanner(System.in);
+//		
+//		for (Conta conta: LeituraEscrita.contaCorrentes)
+//		for( Conta conta1: LeituraEscrita.contaPoupancas)
+//			
+//			
+//			System.out.println("Digite a agencia Destinat�ria: ");
+//			resp1 = sc.next();
+//			System.out.println("Digite a agencia Destinat�ria: ");
+//			resp2 = sc.next();			
+//			System.out.println("Digite a agencia Destinat�ria: ");
+//			resp3 = sc.next();			
+//		
 
 //	public void saldo() {
 //		if (idCliente < 7) {
@@ -108,13 +149,15 @@ public abstract class Conta {
 //	}
 //
 //	public boolean transferir(ContaCorrente suaConta, double valor) {
+
 //		if (this.saldo < valor) {
 //			System.out.println("Saldo insuficiente");
 //			return false;
 //		} else {
-//			double novoSaldo = this.saldo - valor;
+//			
+//			double novoSaldo = this.saldo - valor - 0.20;
 //			this.saldo = novoSaldo;
-//			suaConta.saldo = suaConta.saldo + valor;
+//			contaCorrente = suaConta.saldo + valor;
 //			return true;
 //		}
 //	}
