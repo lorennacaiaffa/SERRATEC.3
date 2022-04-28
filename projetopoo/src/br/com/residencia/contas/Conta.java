@@ -76,6 +76,7 @@ public abstract class Conta {
 		this.status = status;
 	}
 
+
 //	public void saldo() {
 //		if (idCliente < 7) {
 //		ContaCorrente cntc = new ContaCorrente();
@@ -117,4 +118,11 @@ public abstract class Conta {
 //			return true;
 //		}
 //	}
+
+	@Override
+	public String toString() {
+		return "Conta [tipo=" + tipo + ", idConta=" + idConta + ", senhaConta=" + senhaConta + ", numeroAgencia="
+				+ numeroAgencia + ", numeroConta=" + numeroConta + ", saldo=" + saldo + ", dataAbertura=" + dataAbertura
+				+ ", status=" + status + "]";
+	}
 }

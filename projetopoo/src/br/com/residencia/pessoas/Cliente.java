@@ -1,5 +1,7 @@
 package br.com.residencia.pessoas;
 
+import java.time.LocalDate;
+
 import br.com.residencia.enums.TipoUsuario;
 
 public class Cliente extends Pessoa {
@@ -10,7 +12,7 @@ public class Cliente extends Pessoa {
 	private String senhaCliente;
 
 	public Cliente(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
-			String email, String dataNascimento, Integer idEndereco, Integer idCliente, Integer idGerente,
+			String email, LocalDate dataNascimento, Integer idEndereco, Integer idCliente, Integer idGerente,
 			Integer idConta, String senhaCliente) {
 		super(tipoUsuario, nome, genero, estadoCivil, cpf, telefone, email, dataNascimento, idEndereco);
 		this.idCliente = idCliente;
@@ -51,4 +53,11 @@ public class Cliente extends Pessoa {
 		this.senhaCliente = senhaCliente;
 	}
 
+	@Override
+	public String toString() {
+		return "Cliente [idCliente=" + idCliente + ", idGerente=" + idGerente + ", idConta=" + idConta
+				+ ", senhaCliente=" + senhaCliente + "]";
+	}
+
+	
 }

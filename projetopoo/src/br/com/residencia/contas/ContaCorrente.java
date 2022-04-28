@@ -41,4 +41,10 @@ public class ContaCorrente extends Conta {
 		this.taxa = taxa;
 	}
 
+	@Override
+	public String toString() {
+		return "ContaCorrente [idContaCorrente=" + idContaCorrente + ", chequeEspecial=" + chequeEspecial + ", taxa="
+				+ taxa + "]";
+	}
+
 }

@@ -30,4 +30,9 @@ public class ContaPoupanca extends Conta {
 		this.rendimento = rendimento;
 	}
 
+	@Override
+	public String toString() {
+		return "ContaPoupanca [idContaPoupança=" + idContaPoupança + ", rendimento=" + rendimento + "]";
+	}
+
 }

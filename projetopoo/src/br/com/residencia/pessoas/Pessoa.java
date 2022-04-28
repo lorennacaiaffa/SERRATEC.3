@@ -1,5 +1,7 @@
 package br.com.residencia.pessoas;
 
+import java.time.LocalDate;
+
 import br.com.residencia.enums.TipoUsuario;
 
 public abstract class Pessoa {
@@ -11,13 +13,13 @@ public abstract class Pessoa {
 	private String cpf;
 	private String telefone;
 	private String email;
-	private String dataNascimento;
+	private LocalDate dataNascimento;
 	private Integer idEndereco;
 
 	
 
 	public Pessoa(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
-			String email, String dataNascimento, Integer idEndereco) {
+			String email, LocalDate  dataNascimento, Integer idEndereco) {
 		super();
 		this.tipoUsuario = tipoUsuario;
 		this.nome = nome;
@@ -86,16 +88,23 @@ public abstract class Pessoa {
 		this.email = email;
 	}
 
-	public String getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(String dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
 	public Integer getIdEndereco() {
 		return idEndereco;
+	}
+
+	@Override
+	public String toString() {
+		return "Pessoa [tipoUsuario=" + tipoUsuario + ", nome=" + nome + ", genero=" + genero + ", estadoCivil="
+				+ estadoCivil + ", cpf=" + cpf + ", telefone=" + telefone + ", email=" + email + ", dataNascimento="
+				+ dataNascimento + ", idEndereco=" + idEndereco + "]";
 	}
 
 }
