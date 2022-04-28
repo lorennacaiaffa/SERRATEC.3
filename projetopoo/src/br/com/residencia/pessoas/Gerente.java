@@ -1,5 +1,6 @@
 package br.com.residencia.pessoas;
 
+
 import java.time.LocalDate;
 
 import br.com.residencia.enums.TipoUsuario;
@@ -32,6 +33,11 @@ public class Gerente extends Funcionario {
 
 	public void setIdAgencia(Integer idAgencia) {
 		this.idAgencia = idAgencia;
+	}
+
+	@Override
+	public String toString() {
+		return "Gerente [idGerente=" + idGerente + ", idAgencia=" + idAgencia + "]";
 	}
 
 }

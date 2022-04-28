@@ -1,5 +1,7 @@
 package br.com.residencia.pessoas;
 
+
+
 import java.time.LocalDate;
 
 import br.com.residencia.enums.TipoUsuario;
@@ -41,6 +43,11 @@ public class Funcionario extends Pessoa {
 
 	public void setSalario(Double salario) {
 		this.salario = salario;
+	}
+
+	@Override
+	public String toString() {
+		return "Funcionario [idFuncionario=" + idFuncionario + ", senha=" + senha + ", salario=" + salario + "]";
 	}
 
 }

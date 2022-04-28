@@ -53,4 +53,11 @@ public class Cliente extends Pessoa {
 		this.senhaCliente = senhaCliente;
 	}
 
+	@Override
+	public String toString() {
+		return "Cliente [idCliente=" + idCliente + ", idGerente=" + idGerente + ", idConta=" + idConta
+				+ ", senhaCliente=" + senhaCliente + "]";
+	}
+
+	
 }

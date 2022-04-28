@@ -36,4 +36,9 @@ public class Presidente extends Funcionario {
 		this.agencia.add (agencia);
 	}
 
+	@Override
+	public String toString() {
+		return "Presidente [idPresidente=" + idPresidente + ", agencia=" + agencia + "]";
+	}
+
 }

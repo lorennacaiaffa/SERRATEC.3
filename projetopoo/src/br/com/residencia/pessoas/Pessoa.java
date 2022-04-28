@@ -19,7 +19,7 @@ public abstract class Pessoa {
 	
 
 	public Pessoa(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
-			String email, LocalDate dataNascimento, Integer idEndereco) {
+			String email, LocalDate  dataNascimento, Integer idEndereco) {
 		super();
 		this.tipoUsuario = tipoUsuario;
 		this.nome = nome;
@@ -98,6 +98,13 @@ public abstract class Pessoa {
 
 	public Integer getIdEndereco() {
 		return idEndereco;
+	}
+
+	@Override
+	public String toString() {
+		return "Pessoa [tipoUsuario=" + tipoUsuario + ", nome=" + nome + ", genero=" + genero + ", estadoCivil="
+				+ estadoCivil + ", cpf=" + cpf + ", telefone=" + telefone + ", email=" + email + ", dataNascimento="
+				+ dataNascimento + ", idEndereco=" + idEndereco + "]";
 	}
 
 }
