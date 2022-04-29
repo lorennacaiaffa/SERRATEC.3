@@ -6,8 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 import br.com.residencia.agencias.Agencia;
@@ -57,10 +56,12 @@ public class LeituraEscrita {
 		BufferedReader buffRead = new BufferedReader(new FileReader(PATH_BASICO + path));
 		String linha = "";
 
+
 		while (true) {
 			linha = buffRead.readLine();
 			if (linha != null) {
 				String[] vetor = linha.split(";");
+
 
 				if (vetor[0].equalsIgnoreCase(TipoConta.CORRENTE.getTipoConta())) {
 					ContaCorrente contaCorrentes = new ContaCorrente(TipoConta.CORRENTE, Integer.parseInt(vetor[1]),

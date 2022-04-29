@@ -1,5 +1,6 @@
 package br.com.residencia.contas;
 
+
 import java.util.HashMap;
 import java.util.Map;
 import br.com.residencia.enums.TipoConta;
@@ -83,7 +84,6 @@ public abstract class Conta implements Operacoes {
 	public Double saldo(double saldo) {
 		return this.getSaldo();
 	}
-
 
 	@Override
 	public String toString() {

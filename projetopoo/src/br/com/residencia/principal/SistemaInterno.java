@@ -20,11 +20,13 @@ public class SistemaInterno {
 
 		MenuInicial mn = new MenuInicial();
 
+
 		LeituraEscrita.leitor("entrada.txt");
 //		LeituraEscrita.escritor("./");
 
 		
 		mn.login();
+
 
 	
 	}
