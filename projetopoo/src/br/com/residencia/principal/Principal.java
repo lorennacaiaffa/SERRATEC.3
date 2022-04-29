@@ -6,35 +6,34 @@ import java.util.Scanner;
 
 import br.com.residencia.contaException.ContaException;
 import br.com.residencia.contas.Conta;
+import br.com.residencia.contas.ContaCorrente;
+import br.com.residencia.contas.ContaPoupanca;
+import br.com.residencia.enums.TipoConta;
 import br.com.residencia.menu.MenuPrincipal;
 import br.com.residencia.pessoas.Cliente;
-import br.com.residencia.pessoas.Pessoa;
 
 public class Principal {
-	
-public char operacao;
+
+	public char operacao;
 	public double valor;
 	public String inputCpf;
 	public String inputSenha;
-	public static Scanner sc = new Scanner(System.in); 
-	
+	public static Scanner sc = new Scanner(System.in);
 
 	public void menuInterativo() throws ContaException, NullPointerException, InputMismatchException {
 		try {
 
 			imprimeLinhaHorizontal();
-			
-			System.out.println("========== Bem-vindo(a) ao <Heli/Code> ========\n");
+
 			System.out.print("Digite seu CPF: ");
 			inputCpf = sc.next();
 			System.out.print("Digite sua senha: ");
 			inputSenha = sc.next();
 
-			Pessoa usuario = Pessoa.mapaPessoas.get(inputCpf);
-
+			Cliente usuario = Cliente.mapaClientes.get(inputCpf);
 			Conta conta = Conta.mapaContas.get(inputCpf);
-			
-			while (usuario == null || !(usuario.equals(inputSenha))) {
+						
+			while (usuario == null || !(usuario.getSenhaCliente().equals(inputSenha))) {
 				System.out.println("CPF e/ou Senha incorreto(s)\n\n");
 
 				System.out.print("Digite seu CPF: ");
@@ -42,11 +41,9 @@ public char operacao;
 				System.out.print("Digite sua senha: ");
 				inputSenha = sc.next();
 
-				usuario = Pessoa.mapaPessoas.get(inputCpf);
-				
+				usuario = Cliente.mapaClientes.get(inputCpf);
 				conta = Conta.mapaContas.get(inputCpf);
-
-			}
+				}
 
 			limpaTela();
 			subMenu(usuario, conta);
@@ -68,15 +65,15 @@ public char operacao;
 	}
 
 	// SUBMENU
-	public void subMenu(Pessoa usuario, Conta conta)
+	public void subMenu(Cliente usuario, Conta conta)
 			throws ContaException, NullPointerException, InputMismatchException, IOException {
 
 		try {
 
 			imprimeLinhaHorizontal();
-			System.out.println("Bem-vindo(a) a sua conta digital, " + usuario.getNome() + "!\n" + conta.getSaldo());
+			System.out.println("Bem-vindo(a) ao seu Banco, " + usuario.getNome() + "!\n");
 			imprimeLinhaHorizontal();
-			System.out.println("Digite o número correspondente à operação desejada :");
+			System.out.println("Digite o número correspondente à operação desejada:");
 
 			MenuPrincipal.menuPrincipal(usuario, conta);
 
@@ -91,10 +88,10 @@ public char operacao;
 		} finally {
 			subMenu(usuario, conta);
 		}
-	
-	MenuPrincipal.menuPrincipal(usuario, conta);
+
+		MenuPrincipal.menuPrincipal(usuario, conta);
 	}
-	
+
 	public void pulaLinha() {
 		for (int i = 0; i < 3; i++) {
 			System.out.println();

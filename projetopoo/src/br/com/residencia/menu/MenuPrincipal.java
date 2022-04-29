@@ -2,21 +2,17 @@ package br.com.residencia.menu;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
 import br.com.residencia.contaException.ContaException;
 import br.com.residencia.contas.Conta;
-import br.com.residencia.contas.ContaCorrente;
-import br.com.residencia.contas.ContaPoupanca;
 import br.com.residencia.io.LeituraEscrita;
-import br.com.residencia.model.Usuario;
 import br.com.residencia.pessoas.Cliente;
 import br.com.residencia.principal.Principal;
 
 public class MenuPrincipal {
 	double inputValor;
-	static String inputCpf;
-	int operacao;
+	static String inputCpf,inputCpf2;
+	int operacao, opcaoOperacao2;
 	static Integer inputAgencia, inputConta;
 
 	public static void menuPrincipal(Cliente usuario, Conta conta)
@@ -26,7 +22,7 @@ public class MenuPrincipal {
 		try {
 
 			principal.pulaLinha();
-			
+
 			System.out.println("[1]\tSaldo");
 			System.out.println("[2]\tSaque");
 			System.out.println("[3]\tDeposito");
@@ -42,7 +38,9 @@ public class MenuPrincipal {
 			case 1:
 				principal.imprimeLinhaHorizontal();
 				System.out.println(conta.getSaldo());
-				break;				
+
+				principal.pulaLinha();
+				break;
 			case 2:
 				principal.imprimeLinhaHorizontal();
 				System.out.print("Digite o valor que deseja sacar: ");
@@ -62,38 +60,42 @@ public class MenuPrincipal {
 
 				conta.depositar(inputValor);
 
-				//LeituraEscrita.comprovanteDeposito(conta, inputValor);
+				// LeituraEscrita.comprovanteDeposito(conta, inputValor);
 
 				principal.pulaLinha();
 
 				break;
-			case 4: 
+			case 4:
 				principal.imprimeLinhaHorizontal();
-				System.out.print("Digite a agencia destinatária: ");		
-				inputAgencia = Integer.parseInt(Principal.sc.next());		
-				System.out.print("\nDigite a conta destinátaria: ");
+				System.out.print("Digite a agencia destinatária: ");
+				inputAgencia = Integer.parseInt(Principal.sc.next());
+				System.out.print("\nDigite a conta destinatária: ");
 				inputConta = Integer.parseInt(Principal.sc.next());
 				System.out.print("\nDigite a quantia que deseja transferir: ");
 				inputValor = Double.parseDouble(Principal.sc.next());
+				System.out.print("\nDigite o CPF do destinatário: ");
+				inputCpf2 = (Principal.sc.next());
 				
-				Conta contaDestino = Conta.mapaContas.get(inputConta);
-				while (contaDestino == null) {					
-				principal.imprimeLinhaHorizontal();
-				System.out.println("Destinátario ou valor inválido.");
-				System.out.print("Digite a agencia destinatária: ");		
-				inputAgencia = Integer.parseInt(Principal.sc.next());		
-				System.out.print("\nDigite a conta destinátaria: ");
-				inputConta = Integer.parseInt(Principal.sc.next());
-				System.out.print("\nDigite a quantia que deseja transferir: ");
-				inputValor = Double.parseDouble(Principal.sc.next());
+				Conta contaDestino = Conta.mapaContas.get(inputCpf2);
 				
-				contaDestino = Conta.mapaContas.get(inputConta);
-				
+				while (contaDestino == null || !(contaDestino.getCpf().equals(inputCpf2))) {
+					principal.imprimeLinhaHorizontal();
+					System.out.println("Destinátario ou valor inválido.");
+					System.out.print("Digite a agencia destinatária: ");
+					inputAgencia = Integer.parseInt(Principal.sc.next());
+					System.out.print("\nDigite a conta destinátaria: ");
+					inputConta = Integer.parseInt(Principal.sc.next());
+					System.out.print("\nDigite a quantia que deseja transferir: ");
+					inputValor = Double.parseDouble(Principal.sc.next());
+					
+					contaDestino = Conta.mapaContas.get(inputConta);
+
+					System.out.println(contaDestino);
 				}
-				
 				conta.transferir(contaDestino, inputValor);
-				conta.sacar(inputValor);
+//				conta.sacar(inputValor);
 				break;
+
 			case 5:
 				principal.limpaTela();
 				principal.menuInterativo();

@@ -90,9 +90,10 @@ public class ContaCorrente extends Conta implements Tributo {
 			throw new ContaException("O valor digitado para saque é inválido!");
 		} else {
 			double valorTributado = tributarSaque(valor);
-			if (this.getSaldo() - valorTributado >= 0) {
-				this.setSaldo(this.getSaldo() - valorTributado);
+			if (this.saldo - valorTributado >= 0.1) {
+				this.saldo -= valorTributado;
 				this.totalTributado += Tributo.SAQUE;
+				
 
 				// Usamos printf para limitar as casas decimais
 				System.out.println("\nOperação realizada com sucesso!\n");
@@ -107,13 +108,18 @@ public class ContaCorrente extends Conta implements Tributo {
 	}
 
 	@Override
+	public double tributarSaque(double valor) {
+		return valor + Tributo.SAQUE;
+	}
+	
+	@Override
 	public  void depositar(double valor) throws ContaException {
 		if (valor < 0) {
 			throw new ContaException("O valor digitado para depósito é inválido!");
 		} else {
 			double valorTributado = tributarDeposito(valor);
-			if (this.getSaldo() - Tributo.DEPOSITO >= 0) {
-				this.saldo(this.getSaldo() + valorTributado);
+			if (this.saldo - Tributo.DEPOSITO >= 0) {
+				this.saldo += valorTributado;
 				this.totalTributado += Tributo.DEPOSITO;
 
 				// Usamos printf para limitar as casas decimais
@@ -127,6 +133,11 @@ public class ContaCorrente extends Conta implements Tributo {
 	}
 
 	@Override
+	public double tributarDeposito(double valor) {
+		return valor - Tributo.DEPOSITO;
+	}
+	
+	@Override
 	public void transferir(Conta destino, double valor) throws ContaException {
 		if (valor <= 0) {
 			throw new ContaException("O valor digitado para transferência é inválido!");
@@ -135,8 +146,8 @@ public class ContaCorrente extends Conta implements Tributo {
 			double valorTributado = tributarTransferencia(valor);
 
 			if (this.getSaldo() - valorTributado >= 0) {
-				this.saldo(this.getSaldo() - valorTributado);
-				destino.setSaldo(getSaldo() + valor);
+				this.saldo -= valorTributado;
+				destino.saldo += valor;
 				this.totalTributado += Tributo.TRANSFERENCIA;
 
 				// Usamos printf para limitar as casas decimais
@@ -158,17 +169,7 @@ public class ContaCorrente extends Conta implements Tributo {
 		}
 
 	}
-
-	@Override
-	public double tributarSaque(double valor) {
-		return valor + Tributo.SAQUE;
-	}
-
-	@Override
-	public double tributarDeposito(double valor) {
-		return valor - Tributo.DEPOSITO;
-	}
-
+	
 	@Override
 	public double tributarTransferencia(double valor) {
 		return valor + Tributo.TRANSFERENCIA;

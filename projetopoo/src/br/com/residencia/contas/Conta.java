@@ -11,7 +11,7 @@ public abstract class Conta implements Operacoes {
 	private String senhaConta;
 	private String numeroAgencia;
 	private String numeroConta;
-	private Double saldo;
+	protected Double saldo;
 	private String dataAbertura;
 	private Boolean status;
 	private String cpf;

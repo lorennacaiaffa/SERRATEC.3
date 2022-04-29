@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-import br.com.residencia.contas.Conta;
 import br.com.residencia.enums.TipoUsuario;
 
 public abstract class Pessoa {
@@ -21,8 +20,8 @@ public abstract class Pessoa {
 	private Integer idEndereco;
 	
 	public static Map<String, Pessoa> mapaPessoas = new HashMap<>();
-	public static TreeMap<String, Pessoa> OrdenaUsuarios = new TreeMap<>();
-	
+	public static TreeMap<String, Pessoa> OrdenaPessoas = new TreeMap<>();
+
 	public Pessoa(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
 			String email, LocalDate  dataNascimento, Integer idEndereco) {
 		super();
