@@ -1,5 +1,8 @@
 package br.com.residencia.enderecos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Endereco {
 
 	private Integer idEndereco;
@@ -10,6 +13,8 @@ public class Endereco {
 	private String bairro;
 	private String cidade;
 	private String estado;
+	
+	public static List<Endereco> enderecos = new ArrayList<>();
 
 	public Endereco(Integer idEndereco, String cep, String rua, Integer numero, String complemento, String bairro,
 			String cidade, String estado) {

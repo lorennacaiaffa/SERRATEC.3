@@ -1,11 +1,17 @@
 package br.com.residencia.agencias;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Agencia {
 
 	private Integer idAgencia;
 	private Integer idDiretor;
 	private Integer idEndereco;
 	private Integer numeroAgencia;
+	
+	public static List<Agencia> agencias = new ArrayList<>();
+	
 	public Agencia(Integer idAgencia, Integer idDiretor, Integer idEndereco, Integer numeroAgencia) {
 		super();
 		this.idAgencia = idAgencia;

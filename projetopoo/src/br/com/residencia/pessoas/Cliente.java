@@ -1,6 +1,8 @@
 package br.com.residencia.pessoas;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.residencia.enums.TipoUsuario;
 
@@ -11,6 +13,8 @@ public class Cliente extends Pessoa {
 	private Integer idConta;
 	private String senhaCliente;
 
+	public static List<Cliente> clientes = new ArrayList<>();
+	
 	public Cliente(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
 			String email, LocalDate dataNascimento, Integer idEndereco, Integer idCliente, Integer idGerente,
 			Integer idConta, String senhaCliente) {

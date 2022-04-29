@@ -26,8 +26,8 @@ GERENTE;Carl Max;Mascolino;Casado;48262491521;(88)947378078;carl@max.com.br;1968
 GERENTE;Fernanda Borges;Feminino;Casado;84107101290;(31)966359368;fernanda@borges.com.br;1983-09-23;8;2;1867;8843.32;2;2
 GERENTE;Ana Moraes;Feminino;Casado;77450674492;(92)903964525;ana@moraes.com.br;1979-04-30;9;3;6894;6385;3;3
 GERENTE;Carlos Moreira;Mascolino;Casado;39492050471;(63)962798238;carlos@moreira.com.br;1979-02-21;10;4;1380;7156.98;4;4
-DIRETOR;Ricardo Navalha;Masculino;Casado;39092261408;(51)921695054;ricardo@navalha.com.br;1973-12-23;11;5;6843;28632.4;1;2
-DIRETOR;Maria da Conceicao;Feminino;Casado;11101372656;(68)991011168;maria@conceicao.com.br;1978-07-04;12;6;1223;29243.1;2;2
+DIRETOR;Lorenna Caiaffa;Feminino;Casado;39092261408;(51)921695054;lorenna@caiaffa.com.br;1973-12-23;11;5;6843;28632.4;1;2
+DIRETOR;Geisa Alves;Feminino;Casado;11101372656;(68)991011168;geisa@alves.com.br;1978-07-04;12;6;1223;29243.1;2;2
 PRESIDENTE;Elon Musk;Masculino;Casado;53161468450;(11)997315680;elon@musk.com.us;1979-01-15;13;7;6840;42987.3;1
 ENDERECO;1;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP
 ENDERECO;2;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP

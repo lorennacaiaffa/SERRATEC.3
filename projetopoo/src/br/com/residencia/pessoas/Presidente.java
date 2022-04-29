@@ -9,8 +9,10 @@ import br.com.residencia.enums.TipoUsuario;
 public class Presidente extends Funcionario {
 
 	private Integer idPresidente;
+	
 	List<Agencia> agencia = new ArrayList<>();
-
+	public static List<Presidente> presidentes = new ArrayList<>();
+	
 	public Presidente(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf,
 			String telefone, String email, LocalDate dataNascimento, Integer idEndereco, Integer idFuncionario,
 			String senha, Double salario, Integer idPresidente) {

@@ -2,6 +2,8 @@ package br.com.residencia.pessoas;
 
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.residencia.enums.TipoUsuario;
 
@@ -9,6 +11,8 @@ public class Gerente extends Funcionario {
 
 	private Integer idGerente;
 	private Integer idAgencia;
+	
+	public static List<Gerente> gerentes = new ArrayList<>();
 
 	public Gerente(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
 			String email, LocalDate dataNascimento, Integer idEndereco, Integer idFuncionario, String senha,

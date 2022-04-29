@@ -1,10 +1,10 @@
 package br.com.residencia.contas;
 
+import br.com.residencia.contaException.ContaException;
 import br.com.residencia.enums.TipoConta;
-//import br.com.residencia.principal.ContaCorrente;
-//import br.com.residencia.principal.ContaPoupanca;
+import br.com.residencia.operacoes.Operacoes;
 
-public abstract class Conta {
+public abstract class Conta implements Operacoes {
 
 	private TipoConta tipo;
 	private Integer idConta;
@@ -23,7 +23,7 @@ public abstract class Conta {
 		this.senhaConta = senhaConta;
 		this.numeroAgencia = numeroAgencia;
 		this.numeroConta = numeroConta;
-		this.saldo = saldo;
+		this.setSaldo(saldo);
 		this.dataAbertura = dataAbertura;
 		this.status = status;
 	}
@@ -63,7 +63,7 @@ public abstract class Conta {
 	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
-
+	
 	public String getDataAbertura() {
 		return dataAbertura;
 	}
@@ -76,53 +76,16 @@ public abstract class Conta {
 		this.status = status;
 	}
 
+	public Double saldo(double saldo) {
+		return this.getSaldo();
+	}
 
-//	public void saldo() {
-//		if (idCliente < 7) {
-//		ContaCorrente cntc = new ContaCorrente();
-//		cntc.saldo();
-//	}
-//
-//		else {
-//	ContaPoupanca cntp = new ContaPoupanca();cntp.saldo();
-//	}}
-//
-//	public boolean sacar(double valor) {
-//		if (this.saldo < valor) {
-//			return false;
-//		} else {
-//			double novoSaldo = this.saldo - valor;
-//			this.saldo = novoSaldo;
-//			return true;
-//		}
-//	}
-//
-//	public boolean depositar(double valor) {
-//		if (0 > valor) {
-//			return false;
-//		} else {
-//			double novoSaldo = this.saldo + valor;
-//			this.saldo = novoSaldo;
-//			return true;
-//		}
-//	}
-//
-//	public boolean transferir(ContaCorrente suaConta, double valor) {
-//		if (this.saldo < valor) {
-//			System.out.println("Saldo insuficiente");
-//			return false;
-//		} else {
-//			double novoSaldo = this.saldo - valor;
-//			this.saldo = novoSaldo;
-//			suaConta.saldo = suaConta.saldo + valor;
-//			return true;
-//		}
-//	}
 
 	@Override
 	public String toString() {
 		return "Conta [tipo=" + tipo + ", idConta=" + idConta + ", senhaConta=" + senhaConta + ", numeroAgencia="
-				+ numeroAgencia + ", numeroConta=" + numeroConta + ", saldo=" + saldo + ", dataAbertura=" + dataAbertura
+				+ numeroAgencia + ", numeroConta=" + numeroConta + ", saldo=" + getSaldo() + ", dataAbertura=" + dataAbertura
 				+ ", status=" + status + "]";
 	}
+
 }

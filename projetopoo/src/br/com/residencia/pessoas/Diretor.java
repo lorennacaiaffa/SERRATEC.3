@@ -12,7 +12,11 @@ public class Diretor extends Funcionario {
 	private Integer qtdAgencia;
 	// count diretor bateu, soma mais um for 1=0 até comprimento da lista e vai
 	// incremetar
+	
 	List<Agencia> agencia = new ArrayList<>();// tentar varrer a lista com lenght
+	
+	public static List<Diretor> diretores = new ArrayList<>();
+	
 
 	public Diretor(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
 			String email, LocalDate dataNascimento, Integer idEndereco, Integer idFuncionario, String senha,
