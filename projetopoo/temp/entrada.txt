@@ -28,6 +28,8 @@ GERENTE;Ana Moraes;Feminino;Casado;77450674492;(92)903964525;ana@moraes.com.br;1
 GERENTE;Carlos Moreira;Mascolino;Casado;39492050471;(63)962798238;carlos@moreira.com.br;1979-02-21;10;4;1380;7156.98;4;4
 DIRETOR;Lorenna Caiaffa;Feminino;Casado;39092261408;(51)921695054;lorenna@caiaffa.com.br;1973-12-23;11;5;6843;28632.4;1;2
 DIRETOR;Geisa Alves;Feminino;Casado;11101372656;(68)991011168;geisa@alves.com.br;1978-07-04;12;6;1223;29243.1;2;2
+DIRETOR;Ricardo Navalha;Masculino;Casado;39092261408;(51)921695054;ricardo@navalha.com.br;1973-12-23;11;5;6843;28632.4;1;2
+DIRETOR;Maria da Conceicao;Feminino;Casado;11101372656;(68)991011168;maria@conceicao.com.br;1978-07-04;12;6;1223;29243.1;2;2
 PRESIDENTE;Elon Musk;Masculino;Casado;53161468450;(11)997315680;elon@musk.com.us;1979-01-15;13;7;6840;42987.3;1
 ENDERECO;1;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP
 ENDERECO;2;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP

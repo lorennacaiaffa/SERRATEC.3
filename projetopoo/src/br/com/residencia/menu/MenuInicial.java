@@ -22,15 +22,21 @@ public class MenuInicial {
 			login = scan.next();
 			System.out.print("\t\t\tDigite sua senha: ");
 			senha = scan.next();
+
 			for(Cliente cliente : Cliente.clientes) {
 				if(cliente.getCpf().equals(login) && cliente.senhaCliente().equals(senha)) {
 					this.clienteLogado = cliente;
-					System.out.println("Ol·, " + cliente.getNome());
+
+			for(Cliente cliente : LeituraEscrita.clientes) {
+				if(cliente.getCpf().equals(login) && cliente.senhaCliente().equals(senha)) {
+					clienteLogado = cliente;
+
+					System.out.println("Ol√°, " + cliente.getNome());
 					break;
 				}
 			}
 			if(clienteLogado == null) {
-				System.out.println("CPF ou senha inv·lidos");
+				System.out.println("CPF ou senha inv√°lidos");
 			}
 			
 			System.out.println("\n\t\t*********************************************************\n");
@@ -50,19 +56,25 @@ public class MenuInicial {
 			Conta contaCorrente = new ContaCorrente();
 			Conta contaPoupanca = new ContaPoupanca();
 			do {
-				System.out.println("\t\t\t\tEscolha uma opÁ„o:\n");
+				System.out.println("\t\t\t\tEscolha uma op√ß√£o:\n");
 				System.out.println("\t[1] Saldo\t[2] Sacar\t[3] Depositar\t[4]Transferir\t[5] Sair");
 				resp = scan.nextInt();
 				
 
-				switch (resp) { // Saldo. O sistema dever· imprimir o saldo na tela do terminal; 
+				switch (resp) { // Saldo. O sistema dever√° imprimir o saldo na tela do terminal; 
 
 				case 1: {
 
 					if (clienteLogado.getIdConta().equals(contaCorrente.getIdConta())) 
+
 						System.out.println(contaCorrente.saldo(resp));
 					if (clienteLogado.getIdConta().equals(contaPoupanca.getIdConta()))
 						System.out.println(contaPoupanca.saldo(resp));
+
+						System.out.println(contaCorrente.getSaldo());
+					if (clienteLogado.getIdConta().equals(contaPoupanca.getIdConta()))
+						System.out.println(contaPoupanca.getSaldo());
+
 				break;
 				}
 				case 2: {
@@ -97,10 +109,13 @@ public class MenuInicial {
 
 				}
 				if (resp < 0 || resp > 5) {
-					System.out.println("Escolha uma opÁ„o v·lida.");
+					System.out.println("Escolha uma op√ß√£o v√°lida.");
 				}
 
 			} while (resp < 0 || resp > 5);
+
+
+			scan.close();
 
 		}
 	}
