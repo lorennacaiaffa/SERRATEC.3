@@ -87,7 +87,7 @@ public class ContaCorrente extends Conta implements Tributo {
 	@Override
 	public void sacar(double valor) throws ContaException {
 		if (valor < 0) {
-			throw new ContaException("O valor digitado para saque é inválido!");
+			throw new ContaException("O valor digitado para saque Ã© invÃ¡lido!");
 		} else {
 			double valorTributado = tributarSaque(valor);
 			if (this.saldo - valorTributado >= 0.1) {
@@ -96,26 +96,29 @@ public class ContaCorrente extends Conta implements Tributo {
 				
 
 				// Usamos printf para limitar as casas decimais
-				System.out.println("\nOperação realizada com sucesso!\n");
+				System.out.println("\nOperaÃ§Ã£o realizada com sucesso!\n");
 				System.out.printf("Valor sacado: R$%.2f%n", valor, "\n");
 				System.out.printf("Taxa para saque: R$%.2f%n", Tributo.SAQUE, "\n");
 				System.out.printf("Saldo atual: R$%.2f%n", this.getSaldo(), "\n");
 				++totalSaques;
 			} else {
-				System.out.println("Valor digitado excede o saldo disponível!");
+				System.out.println("Valor digitado excede o saldo disponÃ­vel!");
 			}
 		}
 	}
 
 	@Override
+<<<<<<< HEAD
 	public double tributarSaque(double valor) {
 		return valor + Tributo.SAQUE;
 	}
 	
 	@Override
 	public  void depositar(double valor) throws ContaException {
+=======
+>>>>>>> origin
 		if (valor < 0) {
-			throw new ContaException("O valor digitado para depósito é inválido!");
+			throw new ContaException("O valor digitado para depÃ³sito Ã© invÃ¡lido!");
 		} else {
 			double valorTributado = tributarDeposito(valor);
 			if (this.saldo - Tributo.DEPOSITO >= 0) {
@@ -123,9 +126,9 @@ public class ContaCorrente extends Conta implements Tributo {
 				this.totalTributado += Tributo.DEPOSITO;
 
 				// Usamos printf para limitar as casas decimais
-				System.out.println("\nOperação realizada com sucesso!\n");
+				System.out.println("\nOperaÃ§Ã£o realizada com sucesso!\n");
 				System.out.printf("Valor depositado: R$%.2f%n", valor, "\n");
-				System.out.printf("Taxa para depósito: R$%.2f%n", Tributo.DEPOSITO, "\n");
+				System.out.printf("Taxa para depÃ³sito: R$%.2f%n", Tributo.DEPOSITO, "\n");
 				System.out.printf("Saldo atual: R$%.2f%n", this.getSaldo(), "\n");
 				++totalDepositos;
 			}
@@ -140,7 +143,12 @@ public class ContaCorrente extends Conta implements Tributo {
 	@Override
 	public void transferir(Conta destino, double valor) throws ContaException {
 		if (valor <= 0) {
+<<<<<<< HEAD
 			throw new ContaException("O valor digitado para transferência é inválido!");
+=======
+			throw new ContaException("O valor digitado para transferÃªncia Ã© invÃ¡lido!");
+
+>>>>>>> origin
 		} else {
 
 			double valorTributado = tributarTransferencia(valor);
@@ -151,19 +159,19 @@ public class ContaCorrente extends Conta implements Tributo {
 				this.totalTributado += Tributo.TRANSFERENCIA;
 
 				// Usamos printf para limitar as casas decimais
-				System.out.println("\nOperação realizada com sucesso!\n");
+				System.out.println("\nOperaÃ§Ã£o realizada com sucesso!\n");
 				System.out.println("--------------------------");
-				System.out.println("Conta destinatária: ");
-				System.out.printf("Agência: " + destino.getNumeroAgencia() + "\n");
-				System.out.printf("Número: " + destino.getNumeroConta() + "\n");
+				System.out.println("Conta destinatÃ¡ria: ");
+				System.out.printf("AgÃªncia: " + destino.getNumeroAgencia() + "\n");
+				System.out.printf("NÃºmero: " + destino.getNumeroConta() + "\n");
 				System.out.println("--------------------------");
 				System.out.printf("Valor transferido: R$%.2f%n", valor, "\n");
-				System.out.printf("Taxa para transferência: R$%.2f%n", Tributo.TRANSFERENCIA, "\n");
+				System.out.printf("Taxa para transferÃªncia: R$%.2f%n", Tributo.TRANSFERENCIA, "\n");
 				System.out.printf("Saldo atual: R$%.2f%n", this.getSaldo(), "\n");
 
 				++totalTransferencias;
 			} else {
-				System.out.println("Valor digitado excede o saldo disponível!");
+				System.out.println("Valor digitado excede o saldo disponÃ­vel!");
 			}
 
 		}
