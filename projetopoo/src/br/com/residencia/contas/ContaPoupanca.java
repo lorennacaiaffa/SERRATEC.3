@@ -14,8 +14,8 @@ public class ContaPoupanca extends Conta {
 	public static Map<String, Conta> mapaContaPoupancas = new HashMap<>();
 
 	public ContaPoupanca(TipoConta tipo, Integer idConta, String senhaConta, String numeroAgencia, String numeroConta,
-			Double saldo, String dataAbertura, Boolean status, Integer idContaPoupança, Double rendimento) {
-		super(tipo, idConta, senhaConta, numeroAgencia, numeroConta, saldo, dataAbertura, status);
+			Double saldo, String dataAbertura, Boolean status, String cpf, Integer idContaPoupança, Double rendimento) {
+		super(tipo, idConta, senhaConta, numeroAgencia, numeroConta, saldo, dataAbertura, status, cpf);
 		this.idContaPoupança = idContaPoupança;
 		this.rendimento = rendimento;
 	}
@@ -112,6 +112,12 @@ public class ContaPoupanca extends Conta {
 	@Override
 	public String toString() {
 		return "ContaPoupanca [idContaPoupança=" + idContaPoupança + ", rendimento=" + rendimento + "]";
+	}
+
+	@Override
+	public void saldo(Double valor) throws ContaException {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
