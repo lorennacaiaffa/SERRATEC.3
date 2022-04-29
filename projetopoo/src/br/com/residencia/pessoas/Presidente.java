@@ -2,16 +2,21 @@ package br.com.residencia.pessoas;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 import br.com.residencia.agencias.Agencia;
 import br.com.residencia.enums.TipoUsuario;
 
 public class Presidente extends Funcionario {
 
 	private Integer idPresidente;
-	
 	List<Agencia> agencia = new ArrayList<>();
-	public static List<Presidente> presidentes = new ArrayList<>();
+	
+	public static Map<String, Presidente> mapaPresidente = new HashMap<>();
+	public static TreeMap<String, Presidente> OrdenaUsuarios = new TreeMap<>();
 	
 	public Presidente(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf,
 			String telefone, String email, LocalDate dataNascimento, Integer idEndereco, Integer idFuncionario,

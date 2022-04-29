@@ -1,6 +1,7 @@
 package br.com.residencia.contas;
 
-import br.com.residencia.contaException.ContaException;
+import java.util.HashMap;
+import java.util.Map;
 import br.com.residencia.enums.TipoConta;
 import br.com.residencia.operacoes.Operacoes;
 
@@ -14,6 +15,9 @@ public abstract class Conta implements Operacoes {
 	private Double saldo;
 	private String dataAbertura;
 	private Boolean status;
+	
+	public static Map<String, Conta> mapaContas = new HashMap<>();
+//	Set<Integer> agencias = new HashSet<>();
 
 	public Conta(TipoConta tipo, Integer idConta, String senhaConta, String numeroAgencia, String numeroConta,
 			Double saldo, String dataAbertura, Boolean status) {

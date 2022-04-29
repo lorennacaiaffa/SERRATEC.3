@@ -1,7 +1,7 @@
 package br.com.residencia.contas;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import br.com.residencia.contaException.ContaException;
 import br.com.residencia.enums.TipoConta;
@@ -16,7 +16,7 @@ public class ContaCorrente extends Conta implements Tributo {
 	private Integer totalSaques = 0, totalDepositos = 0, totalTransferencias = 0;
 	private Double totalTributado = 0.0;
 
-//	public static Map<String, Conta> mapaContas = new HashMap<>();
+	public static Map<String, Conta> mapaContaCorrentes = new HashMap<>();
 //	Set<Integer> agencias = new HashSet<>();
 
 	public ContaCorrente(TipoConta tipo, Integer idConta, String senhaConta, String numeroAgencia, String numeroConta,

@@ -1,7 +1,7 @@
 package br.com.residencia.contas;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import br.com.residencia.contaException.ContaException;
 import br.com.residencia.enums.TipoConta;
@@ -11,7 +11,7 @@ public class ContaPoupanca extends Conta {
 	private Integer idContaPoupança;
 	private Double rendimento;
 
-	public static List<ContaPoupanca> contaPoupancas = new ArrayList<>();
+	public static Map<String, Conta> mapaContaPoupancas = new HashMap<>();
 
 	public ContaPoupanca(TipoConta tipo, Integer idConta, String senhaConta, String numeroAgencia, String numeroConta,
 			Double saldo, String dataAbertura, Boolean status, Integer idContaPoupança, Double rendimento) {

@@ -2,7 +2,11 @@ package br.com.residencia.pessoas;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 import br.com.residencia.agencias.Agencia;
 import br.com.residencia.enums.TipoUsuario;
 
@@ -10,13 +14,10 @@ public class Diretor extends Funcionario {
 
 	private Integer idDiretor;
 	private Integer qtdAgencia;
-	// count diretor bateu, soma mais um for 1=0 até comprimento da lista e vai
-	// incremetar
-	
 	List<Agencia> agencia = new ArrayList<>();// tentar varrer a lista com lenght
 	
-	public static List<Diretor> diretores = new ArrayList<>();
-	
+	public static Map<String, Diretor> mapaDiretor = new HashMap<>();
+	public static TreeMap<String, Diretor> OrdenaUsuarios = new TreeMap<>();
 
 	public Diretor(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
 			String email, LocalDate dataNascimento, Integer idEndereco, Integer idFuncionario, String senha,

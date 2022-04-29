@@ -6,8 +6,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import br.com.residencia.agencias.Agencia;
@@ -47,46 +45,71 @@ public class LeituraEscrita {
 
 		BufferedReader buffRead = new BufferedReader(new FileReader(PATH_BASICO + path));
 		String linha = "";
-		
 
 		while (true) {
 			linha = buffRead.readLine();
 			if (linha != null) {
 				String[] vetor = linha.split(";");
 
-				if (vetor[0].equalsIgnoreCase("Corrente")) {
-					contaCorrentes.add(new ContaCorrente(TipoConta.CORRENTE, Integer.parseInt(vetor[1]), vetor[2],
-							vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6], Boolean.parseBoolean(vetor[7]),
-							Integer.parseInt(vetor[8]), Double.parseDouble(vetor[9]), Double.parseDouble(vetor[10])));
-				} else if (vetor[0].equalsIgnoreCase("Poupanca")) {
-					contaPoupancas.add(new ContaPoupanca(TipoConta.POUPANCA, Integer.parseInt(vetor[1]), vetor[2],
-							vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6], Boolean.parseBoolean(vetor[7]),
-							Integer.parseInt(vetor[8]), Double.parseDouble(vetor[9])));
-				} else if (vetor[0].equalsIgnoreCase("Cliente")) {
-					clientes.add(new Cliente(TipoUsuario.CLIENTE, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5],
-							vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]),
-							Integer.parseInt(vetor[10]), Integer.parseInt(vetor[11]), vetor[12]));
-				} else if (vetor[0].equalsIgnoreCase("Gerente")) {
-					gerentes.add(new Gerente(TipoUsuario.GERENTE, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5],
-							vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]),
-							vetor[10], Double.parseDouble(vetor[11]), Integer.parseInt(vetor[12]),
-							Integer.parseInt(vetor[13])));
-				} else if (vetor[0].equalsIgnoreCase("Diretor")) {
-					diretores.add(new Diretor(TipoUsuario.DIRETOR, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5],
-							vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]),
-							vetor[10], Double.parseDouble(vetor[11]), Integer.parseInt(vetor[12]),
-							Integer.parseInt(vetor[13])));
-				} else if (vetor[0].equalsIgnoreCase("Presidente")) {
-					presidentes.add(new Presidente(TipoUsuario.PRESIDENTE, vetor[1], vetor[2], vetor[3], vetor[4],
+				if (vetor[0].equalsIgnoreCase(TipoConta.CORRENTE.getTipoConta())) {
+					ContaCorrente contaCorrentes = new ContaCorrente(TipoConta.CORRENTE, Integer.parseInt(vetor[1]),
+							vetor[2], vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6],
+							Boolean.parseBoolean(vetor[7]), Integer.parseInt(vetor[8]), Double.parseDouble(vetor[9]),
+							Double.parseDouble(vetor[10]));
+
+					ContaCorrente.mapaContaCorrentes.put(vetor[1], contaCorrentes);
+
+				} else if (vetor[0].equalsIgnoreCase(TipoConta.POUPANCA.getTipoConta())) {
+					ContaPoupanca contaPoupancas = new ContaPoupanca(TipoConta.POUPANCA, Integer.parseInt(vetor[1]),
+							vetor[2], vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6],
+							Boolean.parseBoolean(vetor[7]), Integer.parseInt(vetor[8]), Double.parseDouble(vetor[9]));
+					ContaPoupanca.mapaContaPoupancas.put(vetor[1], contaPoupancas);
+
+				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.CLIENTE.getTipoUsuario())) {
+					Cliente clientes = new Cliente(TipoUsuario.CLIENTE, vetor[1], vetor[2], vetor[3], vetor[4],
+							vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]),
+							Integer.parseInt(vetor[9]), Integer.parseInt(vetor[10]), Integer.parseInt(vetor[11]),
+							vetor[12]);
+					Cliente.mapaClientes.put(vetor[4], clientes);
+					Cliente.OrdenaUsuarios.put(vetor[1], clientes);
+
+				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.GERENTE.getTipoUsuario())) {
+					Gerente gerentes = new Gerente(TipoUsuario.GERENTE, vetor[1], vetor[2], vetor[3], vetor[4],
 							vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]),
 							Integer.parseInt(vetor[9]), vetor[10], Double.parseDouble(vetor[11]),
-							Integer.parseInt(vetor[12])));
+							Integer.parseInt(vetor[12]), Integer.parseInt(vetor[13]));
+
+					Gerente.mapaContas.put(vetor[12], gerentes);
+					Gerente.OrdenaUsuarios.put(vetor[1], gerentes);
+
+				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.DIRETOR.getTipoUsuario())) {
+					Diretor diretores = new Diretor(TipoUsuario.DIRETOR, vetor[1], vetor[2], vetor[3], vetor[4],
+							vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]),
+							Integer.parseInt(vetor[9]), vetor[10], Double.parseDouble(vetor[11]),
+							Integer.parseInt(vetor[12]), Integer.parseInt(vetor[13]));
+
+					Diretor.mapaDiretor.put(vetor[12], diretores);
+					Diretor.OrdenaUsuarios.put(vetor[1], diretores);
+
+				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.PRESIDENTE.getTipoUsuario())) {
+					Presidente presidentes = new Presidente(TipoUsuario.PRESIDENTE, vetor[1], vetor[2], vetor[3],
+							vetor[4], vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]),
+							Integer.parseInt(vetor[9]), vetor[10], Double.parseDouble(vetor[11]),
+							Integer.parseInt(vetor[12]));
+
+					Presidente.mapaPresidente.put(vetor[12], presidentes);
+					Presidente.OrdenaUsuarios.put(vetor[1], presidentes);
 				} else if (vetor[0].equalsIgnoreCase("Endereco")) {
-					enderecos.add(new Endereco(Integer.parseInt(vetor[1]), vetor[2], vetor[3],
-							Integer.parseInt(vetor[4]), vetor[5], vetor[6], vetor[7], vetor[8]));
+					Endereco enderecos = new Endereco(Integer.parseInt(vetor[1]), vetor[2], vetor[3],
+							Integer.parseInt(vetor[4]), vetor[5], vetor[6], vetor[7], vetor[8]);
+
+					Endereco.mapaContas.put(vetor[0], enderecos);
+
 				} else if (vetor[0].equalsIgnoreCase("Agencia")) {
-					agencias.add(new Agencia(Integer.parseInt(vetor[1]), Integer.parseInt(vetor[2]),
-							Integer.parseInt(vetor[3]), Integer.parseInt(vetor[4])));
+					Agencia agencias = new Agencia(Integer.parseInt(vetor[1]), Integer.parseInt(vetor[2]),
+							Integer.parseInt(vetor[3]), Integer.parseInt(vetor[4]));
+					Agencia.mapaAgencias.put(vetor[0], agencias);
+
 				} else {
 					break;
 				}
@@ -94,7 +117,7 @@ public class LeituraEscrita {
 				break;
 			}
 		}
-	
+
 		buffRead.close();
 	}
 }

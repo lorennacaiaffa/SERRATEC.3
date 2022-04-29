@@ -1,7 +1,8 @@
 package br.com.residencia.agencias;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class Agencia {
 
@@ -10,7 +11,7 @@ public class Agencia {
 	private Integer idEndereco;
 	private Integer numeroAgencia;
 	
-	public static List<Agencia> agencias = new ArrayList<>();
+	public static Map<String, Agencia> mapaAgencias = new HashMap<>();
 	
 	public Agencia(Integer idAgencia, Integer idDiretor, Integer idEndereco, Integer numeroAgencia) {
 		super();

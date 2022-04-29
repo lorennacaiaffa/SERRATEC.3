@@ -16,8 +16,6 @@ public abstract class Pessoa {
 	private LocalDate dataNascimento;
 	private Integer idEndereco;
 
-	
-
 	public Pessoa(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
 			String email, LocalDate  dataNascimento, Integer idEndereco) {
 		super();
