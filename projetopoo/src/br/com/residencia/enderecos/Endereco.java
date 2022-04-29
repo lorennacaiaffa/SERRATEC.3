@@ -1,5 +1,8 @@
 package br.com.residencia.enderecos;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Endereco {
 
 	private Integer idEndereco;
@@ -10,6 +13,8 @@ public class Endereco {
 	private String bairro;
 	private String cidade;
 	private String estado;
+	
+	public static Map<String, Endereco> mapaContas = new HashMap<>();
 
 	public Endereco(Integer idEndereco, String cep, String rua, Integer numero, String complemento, String bairro,
 			String cidade, String estado) {

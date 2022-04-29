@@ -1,12 +1,19 @@
 package br.com.residencia.contas;
 
+
+import java.util.HashMap;
+import java.util.Map;
+import br.com.residencia.enums.TipoConta;
+import br.com.residencia.operacoes.Operacoes;
+
 import java.util.Scanner;
 
 import br.com.residencia.enums.TipoConta;
 import br.com.residencia.io.LeituraEscrita;
 import br.com.residencia.menu.MenuInicial;
 
-public abstract class Conta {
+
+public abstract class Conta implements Operacoes {
 
 	private TipoConta tipo;
 	private Integer idConta;
@@ -16,6 +23,9 @@ public abstract class Conta {
 	private Double saldo;
 	private String dataAbertura;
 	private Boolean status;
+	
+	public static Map<String, Conta> mapaContas = new HashMap<>();
+//	Set<Integer> agencias = new HashSet<>();
 
 	public Conta(TipoConta tipo, Integer idConta, String senhaConta, String numeroAgencia, String numeroConta,
 			Double saldo, String dataAbertura, Boolean status) {
@@ -25,7 +35,7 @@ public abstract class Conta {
 		this.senhaConta = senhaConta;
 		this.numeroAgencia = numeroAgencia;
 		this.numeroConta = numeroConta;
-		this.saldo = saldo;
+		this.setSaldo(saldo);
 		this.dataAbertura = dataAbertura;
 		this.status = status;
 	}
@@ -62,6 +72,12 @@ public abstract class Conta {
 		return saldo;
 	}
 
+
+	public void setSaldo(Double saldo) {
+		this.saldo = saldo;
+	}
+	
+
 	public String getDataAbertura() {
 		return dataAbertura;
 	}
@@ -74,6 +90,9 @@ public abstract class Conta {
 		this.status = status;
 	}
 
+	public Double saldo(double saldo) {
+		return this.getSaldo();
+	}
 
 
 	public Double saldo(double saldo) {
@@ -162,10 +181,12 @@ public abstract class Conta {
 //		}
 //	}
 
+
 	@Override
 	public String toString() {
 		return "Conta [tipo=" + tipo + ", idConta=" + idConta + ", senhaConta=" + senhaConta + ", numeroAgencia="
-				+ numeroAgencia + ", numeroConta=" + numeroConta + ", saldo=" + saldo + ", dataAbertura=" + dataAbertura
+				+ numeroAgencia + ", numeroConta=" + numeroConta + ", saldo=" + getSaldo() + ", dataAbertura=" + dataAbertura
 				+ ", status=" + status + "]";
 	}
+
 }

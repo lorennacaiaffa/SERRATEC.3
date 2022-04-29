@@ -1,11 +1,18 @@
 package br.com.residencia.agencias;
 
+import java.util.HashMap;
+import java.util.Map;
+
+
 public class Agencia {
 
 	private Integer idAgencia;
 	private Integer idDiretor;
 	private Integer idEndereco;
 	private Integer numeroAgencia;
+	
+	public static Map<String, Agencia> mapaAgencias = new HashMap<>();
+	
 	public Agencia(Integer idAgencia, Integer idDiretor, Integer idEndereco, Integer numeroAgencia) {
 		super();
 		this.idAgencia = idAgencia;

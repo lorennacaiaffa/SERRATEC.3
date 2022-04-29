@@ -1,6 +1,9 @@
 package br.com.residencia.pessoas;
 
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 import br.com.residencia.enums.TipoUsuario;
 
@@ -11,6 +14,9 @@ public class Cliente extends Pessoa {
 	private Integer idConta;
 	private String senhaCliente;
 
+	public static Map<String, Cliente> mapaClientes = new HashMap<>();
+	public static TreeMap<String, Cliente> OrdenaUsuarios = new TreeMap<>();
+	
 	public Cliente(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
 			String email, LocalDate dataNascimento, Integer idEndereco, Integer idCliente, Integer idGerente,
 			Integer idConta, String senhaCliente) {

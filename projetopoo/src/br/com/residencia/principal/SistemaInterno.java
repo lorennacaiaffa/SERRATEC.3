@@ -3,17 +3,23 @@ package br.com.residencia.principal;
 import java.io.IOException;
 
 
+
 import br.com.residencia.io.LeituraEscrita;
 import br.com.residencia.menu.MenuInicial;
 
 //import br.com.residencia.menu.MenuInicial;
+
 import br.com.residencia.io.LeituraEscrita;
+import br.com.residencia.menu.MenuInicial;
 
 
 public class SistemaInterno {
 
 	public static void main(String[] args) throws IOException {
 		
+
+		MenuInicial mn = new MenuInicial();
+
 
 		MenuInicial mn = new MenuInicial();
 
@@ -33,12 +39,11 @@ public class SistemaInterno {
 
 		LeituraEscrita.leitor("entrada.txt");
 //		LeituraEscrita.escritor("./");
+
+		mn.login();
 		
 				
-//	Cliente c1 = new Cliente();
-//	c1.setCpf("150.793.057-70");
-//	c1.setSenhaCliente("123");
-	
+
 	
 	}
 }
