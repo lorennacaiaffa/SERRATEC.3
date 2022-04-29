@@ -6,13 +6,6 @@ import java.util.Map;
 import br.com.residencia.enums.TipoConta;
 import br.com.residencia.operacoes.Operacoes;
 
-import java.util.Scanner;
-
-import br.com.residencia.enums.TipoConta;
-import br.com.residencia.io.LeituraEscrita;
-import br.com.residencia.menu.MenuInicial;
-
-
 public abstract class Conta implements Operacoes {
 
 	private TipoConta tipo;
@@ -72,12 +65,10 @@ public abstract class Conta implements Operacoes {
 		return saldo;
 	}
 
-
 	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
 	
-
 	public String getDataAbertura() {
 		return dataAbertura;
 	}
@@ -93,94 +84,6 @@ public abstract class Conta implements Operacoes {
 	public Double saldo(double saldo) {
 		return this.getSaldo();
 	}
-
-
-	public Double saldo(double saldo) {
-		return this.saldo;
-	}
-
-	public boolean sacar(double valor) {
-		if (this.saldo < valor) {
-			System.out.println("Saldo insuficiente.");
-			return false;
-		} else {
-			double novoSaldo = this.saldo - valor - 0.10;
-			this.saldo = novoSaldo;
-			return true;
-		}
-	}
-
-	public boolean depositar(double valor) {
-		if (0 > valor) {
-			return false;
-		} else {
-			double novoSaldo = this.saldo + valor - 0.10;
-			this.saldo = novoSaldo;
-			return true;
-		}
-	}
-
-//	public boolean transferir(Conta numeroAgencia,Conta numeroConta, double valor) {
-//		String resp1, resp2, resp3;
-//		
-//		Scanner sc = new Scanner(System.in);
-//		
-//		for (Conta conta: LeituraEscrita.contaCorrentes)
-//		for( Conta conta1: LeituraEscrita.contaPoupancas)
-//			
-//			
-//			System.out.println("Digite a agencia Destinat�ria: ");
-//			resp1 = sc.next();
-//			System.out.println("Digite a agencia Destinat�ria: ");
-//			resp2 = sc.next();			
-//			System.out.println("Digite a agencia Destinat�ria: ");
-//			resp3 = sc.next();			
-//		
-
-//	public void saldo() {
-//		if (idCliente < 7) {
-//		ContaCorrente cntc = new ContaCorrente();
-//		cntc.saldo();
-//	}
-//
-//		else {
-//	ContaPoupanca cntp = new ContaPoupanca();cntp.saldo();
-//	}}
-//
-//	public boolean sacar(double valor) {
-//		if (this.saldo < valor) {
-//			return false;
-//		} else {
-//			double novoSaldo = this.saldo - valor;
-//			this.saldo = novoSaldo;
-//			return true;
-//		}
-//	}
-//
-//	public boolean depositar(double valor) {
-//		if (0 > valor) {
-//			return false;
-//		} else {
-//			double novoSaldo = this.saldo + valor;
-//			this.saldo = novoSaldo;
-//			return true;
-//		}
-//	}
-//
-//	public boolean transferir(ContaCorrente suaConta, double valor) {
-
-//		if (this.saldo < valor) {
-//			System.out.println("Saldo insuficiente");
-//			return false;
-//		} else {
-//			
-//			double novoSaldo = this.saldo - valor - 0.20;
-//			this.saldo = novoSaldo;
-//			contaCorrente = suaConta.saldo + valor;
-//			return true;
-//		}
-//	}
-
 
 	@Override
 	public String toString() {

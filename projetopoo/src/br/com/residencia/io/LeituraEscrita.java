@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
+
 import java.util.Scanner;
 
 import br.com.residencia.agencias.Agencia;
@@ -54,7 +55,7 @@ public class LeituraEscrita {
 
 		BufferedReader buffRead = new BufferedReader(new FileReader(PATH_BASICO + path));
 		String linha = "";
-		
+
 
 		while (true) {
 			linha = buffRead.readLine();
@@ -121,56 +122,6 @@ public class LeituraEscrita {
 							Integer.parseInt(vetor[3]), Integer.parseInt(vetor[4]));
 					Agencia.mapaAgencias.put(vetor[0], agencias);
 
-				} else {
-					break;
-				}
-
-//				List<String> lista = new ArrayList<>();
-//				for(int i = 0; i < vetor.length; i ++) {
-//				lista.add(vetor[i]);
-//				}
-//					
-//				if (lista.get(0).equalsIgnoreCase("Corrente")) {
-//					contaCorrente.add(new ContaCorrente(TipoConta.CORRENTE, Integer.parseInt(lista.get(1)), lista.get(2), lista.get(3), lista.get(4), Double.parseDouble(lista.get(5)), lista.get(6), Boolean.parseBoolean(lista.get(7)), Integer.parseInt(lista.get(8)), Double.parseDouble(lista.get(9)), null));
-//					lista.clear();
-				
-				if (vetor[0].equalsIgnoreCase("Corrente")) {
-					contaCorrentes.add(new ContaCorrente(TipoConta.CORRENTE, Integer.parseInt(vetor[1]), vetor[2],
-							vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6], Boolean.parseBoolean(vetor[7]),
-							Integer.parseInt(vetor[8]), Double.parseDouble(vetor[9]), Double.parseDouble(vetor[10])));
-				} else if (vetor[0].equalsIgnoreCase("Poupanca")) {
-					contaPoupancas.add(new ContaPoupanca(TipoConta.POUPANCA, Integer.parseInt(vetor[1]), vetor[2],
-							vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6], Boolean.parseBoolean(vetor[7]),
-							Integer.parseInt(vetor[8]), Double.parseDouble(vetor[9])));
-				} else if (vetor[0].equalsIgnoreCase("Cliente")) {
-					clientes.add(new Cliente(TipoUsuario.CLIENTE, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5],
-							vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]),
-							Integer.parseInt(vetor[10]), Integer.parseInt(vetor[11]), vetor[12]));
-				} else if (vetor[0].equalsIgnoreCase("Gerente")) {
-
-					gerentes.add(new Gerente(TipoUsuario.GERENTE, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5],
-							vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]),
-							vetor[10], Double.parseDouble(vetor[11]), Integer.parseInt(vetor[12]),
-							Integer.parseInt(vetor[13])));
-
-					gerente.add(new Gerente(TipoUsuario.GERENTE, vetor[1], vetor[2], vetor[3], vetor[4],vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]), vetor[10], Double.parseDouble(vetor[11]), Integer.parseInt(vetor[12]),Integer.parseInt(vetor[13])));
-
-				} else if (vetor[0].equalsIgnoreCase("Diretor")) {
-					diretores.add(new Diretor(TipoUsuario.DIRETOR, vetor[1], vetor[2], vetor[3], vetor[4], vetor[5],
-							vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]), Integer.parseInt(vetor[9]),
-							vetor[10], Double.parseDouble(vetor[11]), Integer.parseInt(vetor[12]),
-							Integer.parseInt(vetor[13])));
-				} else if (vetor[0].equalsIgnoreCase("Presidente")) {
-					presidentes.add(new Presidente(TipoUsuario.PRESIDENTE, vetor[1], vetor[2], vetor[3], vetor[4],
-							vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]),
-							Integer.parseInt(vetor[9]), vetor[10], Double.parseDouble(vetor[11]),
-							Integer.parseInt(vetor[12])));
-				} else if (vetor[0].equalsIgnoreCase("Endereco")) {
-					enderecos.add(new Endereco(Integer.parseInt(vetor[1]), vetor[2], vetor[3],
-							Integer.parseInt(vetor[4]), vetor[5], vetor[6], vetor[7], vetor[8]));
-				} else if (vetor[0].equalsIgnoreCase("Agencia")) {
-					agencias.add(new Agencia(Integer.parseInt(vetor[1]), Integer.parseInt(vetor[2]),
-							Integer.parseInt(vetor[3]), Integer.parseInt(vetor[4])));
 				} else {
 					break;
 				}

@@ -13,40 +13,36 @@ public class MenuInicial {
 	Scanner scan = new Scanner(System.in);
 	Cliente clienteLogado = null;
 
+	Boolean verifica = false;
+
 		public void login() {
-		String login, senha;
+		String inputLogin, inputSenha;
 		
 		do {
 			System.out.println("\t\t\t===== Bem-vindo ao Banco <Heli/Code> =====\n");
 			System.out.print("\t\t\tDigite seu CPF: ");
-			login = scan.next();
+
+			inputLogin = scan.next();
 			System.out.print("\t\t\tDigite sua senha: ");
-			senha = scan.next();
-
-			for(Cliente cliente : Cliente.clientes) {
-				if(cliente.getCpf().equals(login) && cliente.senhaCliente().equals(senha)) {
-					this.clienteLogado = cliente;
-
-			for(Cliente cliente : LeituraEscrita.clientes) {
-				if(cliente.getCpf().equals(login) && cliente.senhaCliente().equals(senha)) {
-					clienteLogado = cliente;
-
-					System.out.println("Olá, " + cliente.getNome());
-					break;
-				}
+			inputSenha = scan.next();
+			
+			
+			Cliente usuario = Cliente.mapaClientes.get(inputLogin);
+			
+			if(usuario != null && usuario.getSenhaCliente().equals(inputSenha)) {
+				verifica =true;
 			}
-			if(clienteLogado == null) {
-				System.out.println("CPF ou senha inválidos");
+			
+			else {
+				System.out.println("CPF e/ou Senha incorreto(s)\n\n");
 			}
 			
 			System.out.println("\n\t\t*********************************************************\n");
-		} while (clienteLogado == null);
+		} while (!verifica);
 
 		menu();
 		
-		
-//		switch(clienteLogado.getTipoUsuario()) {
-//		}
+
 		}
 
 	
@@ -56,7 +52,9 @@ public class MenuInicial {
 			Conta contaCorrente = new ContaCorrente();
 			Conta contaPoupanca = new ContaPoupanca();
 			do {
-				System.out.println("\t\t\t\tEscolha uma opção:\n");
+
+				System.out.println("\t\t\t\tEscolha uma op��o:\n");
+
 				System.out.println("\t[1] Saldo\t[2] Sacar\t[3] Depositar\t[4]Transferir\t[5] Sair");
 				resp = scan.nextInt();
 				
@@ -79,19 +77,23 @@ public class MenuInicial {
 				}
 				case 2: {
 					if (clienteLogado.getIdConta().equals(contaCorrente.getIdConta())) 
-							contaCorrente.sacar(resp);
+
+							//contaCorrente.sacar(resp);
 				
 					if (clienteLogado.getIdConta().equals(contaPoupanca.getIdConta()))
-							contaPoupanca.sacar(resp);
+							//contaPoupanca.sacar(resp);
+
 				
 					break;
 				}
 				case 3: {
 					if (clienteLogado.getIdConta().equals(contaCorrente.getIdConta())) 
-						contaCorrente.depositar(resp);
+
+						//contaCorrente.depositar(resp);
 			
 				if (clienteLogado.getIdConta().equals(contaPoupanca.getIdConta()))
-						contaPoupanca.depositar(resp);
+						//contaPoupanca.depositar(resp);
+
 					break;
 				}
 				case 4: {
