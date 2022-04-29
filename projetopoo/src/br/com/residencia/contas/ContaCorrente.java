@@ -136,7 +136,7 @@ public class ContaCorrente extends Conta implements Tributo {
 
 			if (this.getSaldo() - valorTributado >= 0) {
 				this.saldo(this.getSaldo() - valorTributado);
-				this.destino.setSaldo(this.getSaldo() + valor);
+				destino.setSaldo(getSaldo() + valor);
 				this.totalTributado += Tributo.TRANSFERENCIA;
 
 				// Usamos printf para limitar as casas decimais
@@ -178,5 +178,11 @@ public class ContaCorrente extends Conta implements Tributo {
 	public String toString() {
 		return "ContaCorrente [idContaCorrente=" + idContaCorrente + ", chequeEspecial=" + chequeEspecial + ", taxa="
 				+ taxa + "]";
+	}
+
+	@Override
+	public void saldo(Double valor) throws ContaException {
+		// TODO Auto-generated method stub
+		
 	}
 }

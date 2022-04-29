@@ -10,7 +10,7 @@ public class SistemaInterno {
 public static void main(String[] args)
 			throws IOException, InputMismatchException, NullPointerException, ContaException {
 
-		LeituraEscrita.leitor("entrada.txt");
+	LeituraEscrita.leitor("entrada.txt");
 	
 		Principal principal = new Principal();
 		principal.menuInterativo();

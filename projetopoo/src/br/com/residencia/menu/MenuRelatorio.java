@@ -11,6 +11,7 @@ import br.com.residencia.enums.TipoConta;
 import br.com.residencia.enums.TipoUsuario;
 import br.com.residencia.io.LeituraEscrita;
 import br.com.residencia.model.Usuario;
+import br.com.residencia.pessoas.Cliente;
 import br.com.residencia.principal.Principal;
 import br.com.residencia.tributos.Tributo;
 
@@ -20,7 +21,7 @@ Principal principal = new Principal();
 	int operacao;
 	MenuPrincipal menuPrincipal = new MenuPrincipal();
 
-	public static void menuRelatorio(Integer integer, Usuario usuario, Conta conta)
+	public static void menuRelatorio(Integer integer, Cliente usuario, Conta conta)
 			throws IOException, InputMismatchException, NullPointerException, ContaException {
 
 		Principal principal = new Principal();
@@ -59,7 +60,7 @@ Principal principal = new Principal();
 				System.out.println(
 						"Total de transferências realizadas: " + ((ContaCorrente) conta).getTotalTransferencias());
 
-				LeituraEscrita.relatorioTributacaoContaCorrente(conta);
+				//LeituraEscrita.relatorioTributacaoContaCorrente(conta);
 
 			} else {
 
@@ -72,9 +73,9 @@ Principal principal = new Principal();
 				System.out.println("Digite o número de dias para a simulação: ");
 				inputDias = Principal.sc.nextInt();
 
-				((ContaPoupanca) conta).previsaoDeRendimento(inputValor, inputDias);
+			//	((ContaPoupanca) conta).previsaoDeRendimento(inputValor, inputDias);
 
-				LeituraEscrita.relatorioRendimentoPoupanca(conta, inputValor, inputDias);
+				//LeituraEscrita.relatorioRendimentoPoupanca(conta, inputValor, inputDias);
 
 			}
 
@@ -117,16 +118,16 @@ Principal principal = new Principal();
 
 	}
 
-	public static void selecaoRelatorio(Conta conta, Usuario usuario)
+	public static void selecaoRelatorio(Conta conta, Cliente usuario)
 			throws InputMismatchException, NullPointerException, ContaException, IOException {
 
-		if (usuario.getTipo().equals(TipoUsuario.CLIENTE.getTipoUsuario())) {
+		if (usuario.getTipoUsuario().equals(TipoUsuario.CLIENTE.getTipoUsuario())) {
 			MenuRelatorio.menuRelatorio(TipoUsuario.CLIENTE.getIdTipoUsuario(), usuario, conta);
-		} else if (usuario.getTipo().equals(TipoUsuario.GERENTE.getTipoUsuario())) {
+		} else if (usuario.getTipoUsuario().equals(TipoUsuario.GERENTE.getTipoUsuario())) {
 			MenuRelatorio.menuRelatorio(TipoUsuario.GERENTE.getIdTipoUsuario(), usuario, conta);
-		} else if (usuario.getTipo().equals(TipoUsuario.DIRETOR.getTipoUsuario())) {
+		} else if (usuario.getTipoUsuario().equals(TipoUsuario.DIRETOR.getTipoUsuario())) {
 			MenuRelatorio.menuRelatorio(TipoUsuario.DIRETOR.getIdTipoUsuario(), usuario, conta);
-		} else if (usuario.getTipo().equals(TipoUsuario.PRESIDENTE.getTipoUsuario())) {
+		} else if (usuario.getTipoUsuario().equals(TipoUsuario.PRESIDENTE.getTipoUsuario())) {
 			MenuRelatorio.menuRelatorio(TipoUsuario.PRESIDENTE.getIdTipoUsuario(), usuario, conta);
 		}
 	}

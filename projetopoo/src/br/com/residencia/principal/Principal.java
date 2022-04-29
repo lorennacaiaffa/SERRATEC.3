@@ -8,6 +8,7 @@ import br.com.residencia.contaException.ContaException;
 import br.com.residencia.contas.Conta;
 import br.com.residencia.menu.MenuPrincipal;
 import br.com.residencia.pessoas.Cliente;
+import br.com.residencia.pessoas.Pessoa;
 
 public class Principal {
 	
@@ -23,16 +24,17 @@ public char operacao;
 
 			imprimeLinhaHorizontal();
 			
+			System.out.println("========== Bem-vindo(a) ao <Heli/Code> ========\n");
 			System.out.print("Digite seu CPF: ");
 			inputCpf = sc.next();
 			System.out.print("Digite sua senha: ");
 			inputSenha = sc.next();
 
-			Cliente usuario = Cliente.mapaClientes.get(inputCpf);
+			Pessoa usuario = Pessoa.mapaPessoas.get(inputCpf);
 
 			Conta conta = Conta.mapaContas.get(inputCpf);
-
-			while (usuario == null || !(usuario.getSenhaCliente().equals(inputSenha))) {
+			
+			while (usuario == null || !(usuario.equals(inputSenha))) {
 				System.out.println("CPF e/ou Senha incorreto(s)\n\n");
 
 				System.out.print("Digite seu CPF: ");
@@ -40,9 +42,10 @@ public char operacao;
 				System.out.print("Digite sua senha: ");
 				inputSenha = sc.next();
 
-				usuario = Cliente.mapaClientes.get(inputCpf);
-
+				usuario = Pessoa.mapaPessoas.get(inputCpf);
+				
 				conta = Conta.mapaContas.get(inputCpf);
+
 			}
 
 			limpaTela();
@@ -65,15 +68,15 @@ public char operacao;
 	}
 
 	// SUBMENU
-	public void subMenu(Cliente usuario, Conta conta)
+	public void subMenu(Pessoa usuario, Conta conta)
 			throws ContaException, NullPointerException, InputMismatchException, IOException {
 
 		try {
 
 			imprimeLinhaHorizontal();
-			System.out.println("Bem-vindo(a) ao seu Banco, " + usuario.getNome() + "!\n");
+			System.out.println("Bem-vindo(a) a sua conta digital, " + usuario.getNome() + "!\n" + conta.getSaldo());
 			imprimeLinhaHorizontal();
-			System.out.println("Digite o número correspondente à operação desejada:");
+			System.out.println("Digite o número correspondente à operação desejada :");
 
 			MenuPrincipal.menuPrincipal(usuario, conta);
 
