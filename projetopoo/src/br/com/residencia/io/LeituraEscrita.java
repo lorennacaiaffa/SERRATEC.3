@@ -5,12 +5,16 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import br.com.residencia.agencias.Agencia;
+import br.com.residencia.contas.Conta;
 import br.com.residencia.contas.ContaCorrente;
 import br.com.residencia.contas.ContaPoupanca;
 import br.com.residencia.enderecos.Endereco;
@@ -61,20 +65,21 @@ public class LeituraEscrita {
 			linha = buffRead.readLine();
 			if (linha != null) {
 				String[] vetor = linha.split(";");
-
+				
 				if (vetor[0].equalsIgnoreCase(TipoConta.CORRENTE.getTipoConta())) {
 					ContaCorrente contaCorrentes = new ContaCorrente(TipoConta.CORRENTE, Integer.parseInt(vetor[1]),
 							vetor[2], vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6],
-							Boolean.parseBoolean(vetor[7]), Integer.parseInt(vetor[8]), Double.parseDouble(vetor[9]),
-							Double.parseDouble(vetor[10]));
-
-					ContaCorrente.mapaContaCorrentes.put(vetor[1], contaCorrentes);
-
+							Boolean.parseBoolean(vetor[7]), vetor[8], Integer.parseInt(vetor[9]), Double.parseDouble(vetor[10]),
+							Double.parseDouble(vetor[11]));
+							
+							ContaCorrente.mapaContaCorrentes.put(vetor[8], contaCorrentes);		
+			
 				} else if (vetor[0].equalsIgnoreCase(TipoConta.POUPANCA.getTipoConta())) {
 					ContaPoupanca contaPoupancas = new ContaPoupanca(TipoConta.POUPANCA, Integer.parseInt(vetor[1]),
 							vetor[2], vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6],
-							Boolean.parseBoolean(vetor[7]), Integer.parseInt(vetor[8]), Double.parseDouble(vetor[9]));
-					ContaPoupanca.mapaContaPoupancas.put(vetor[1], contaPoupancas);
+							Boolean.parseBoolean(vetor[7]), vetor[8], Integer.parseInt(vetor[9]), Double.parseDouble(vetor[10]));
+							
+					ContaPoupanca.mapaContaPoupancas.put(vetor[8], contaPoupancas);
 
 				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.CLIENTE.getTipoUsuario())) {
 					Cliente clientes = new Cliente(TipoUsuario.CLIENTE, vetor[1], vetor[2], vetor[3], vetor[4],
@@ -132,4 +137,128 @@ public class LeituraEscrita {
 
 		buffRead.close();
 	}
+	public static void comprovanteSaque(Conta conta, double valorSaque) throws IOException {
+		String nomeArquivo = conta.getCpf() + "_" + conta.getNumeroAgencia() + "_" + conta.getNumeroConta()
+				+ "_transacoes";
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nomeArquivo + EXTENSAO));
+
+		String linha = "*************** SAQUE ***************";
+		buffWrite.append(linha + "\n");
+
+		linha = "CPF: " + conta.getCpf();
+		buffWrite.append(linha + "\n");
+
+		linha = "Agência: " + conta.getNumeroAgencia();
+		buffWrite.append(linha + "\n");
+
+		linha = "Conta: " + conta.getNumeroConta();
+		buffWrite.append(linha + "\n");
+
+		linha = "Valor: R$" + valorSaque;
+		buffWrite.append(linha + "\n");
+
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		Date date = new Date();
+		linha = "Operação realizada em: " + simpleDateFormat.format(date);
+		buffWrite.append(linha + "\n");
+
+		linha = "*************** FIM DO SAQUE ***************";
+		buffWrite.append(linha + "\n\n");
+
+		buffWrite.close();
+
+	}
+
+	public static void relatorioContasPorAgencia(Conta conta) throws IOException {
+
+		String nomeArquivo = conta.getCpf() + "_" + conta.getNumeroAgencia() + "_" + conta.getNumeroConta()
+				+ "_contas_por_agencia";
+
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nomeArquivo + EXTENSAO));
+
+		int totalContas = 0;
+
+		String linha = "********************** INFORMAÇÕES DO RESPONSÁVEL **********************";
+		buffWrite.append(linha + "\n\n");
+
+		linha = "CPF: " + conta.getCpf();
+		buffWrite.append(linha + "\n");
+
+		linha = "Agência : " + conta.getNumeroAgencia();
+		buffWrite.append(linha + "\n");
+
+		linha = "*******************************************************";
+		buffWrite.append(linha + "\n\n");
+
+		linha = "*************** TOTAL DE CONTAS NA MESMA AGÊNCIA ***************";
+		buffWrite.append(linha + "\n\n");
+
+		for (String cpf : Conta.mapaContas.keySet()) {
+			if (Conta.mapaContas.get(cpf).getNumeroAgencia().equals(conta.getNumeroAgencia())) {
+
+				linha = "CPF: " + Conta.mapaContas.get(cpf).getCpf();
+				buffWrite.append(linha + "\n");
+
+				linha = "Agência : " + Conta.mapaContas.get(cpf).getNumeroAgencia();
+				buffWrite.append(linha + "\n");
+
+				linha = "Conta: " + Conta.mapaContas.get(cpf).getNumeroConta();
+				buffWrite.append(linha + "\n");
+
+				totalContas++;
+
+				linha = "**********************************";
+				buffWrite.append(linha + "\n");
+			}
+
+		}
+
+		linha = "Total de contas: " + totalContas;
+		buffWrite.append(linha + "\n");
+
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		Date date = new Date();
+		linha = "Operação realizada em: " + simpleDateFormat.format(date);
+		buffWrite.append(linha + "\n");
+
+		linha = "************************************************************************";
+		buffWrite.append(linha + "\n\n");
+
+		buffWrite.close();
+
+	}
+
+	public static void relatorioTotalCapital(Conta conta, Map<String, Conta> mapaContas) throws IOException {
+
+		String nomeArquivo = conta.getCpf() + "_" + conta.getNumeroAgencia() + "_" + conta.getNumeroConta()
+				+ "_total_capital";
+
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nomeArquivo + EXTENSAO, true));
+
+		double saldoTotal = 0.0;
+
+		String linha = "************************* TOTAL DE CAPITAL ARMAZENADO *************************";
+		buffWrite.append(linha + "\n\n");
+
+		for (String cpf : Conta.mapaContas.keySet()) {
+
+			saldoTotal += Conta.mapaContas.get(cpf).getSaldo();
+
+		}
+
+		linha = "O total de capital armazenado no banco é de: R$" + saldoTotal;
+		buffWrite.append(linha + "\n");
+
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		Date date = new Date();
+		linha = "Operação realizada em: " + simpleDateFormat.format(date);
+		buffWrite.append(linha + "\n");
+
+		linha = "*******************************************************************************";
+		buffWrite.append(linha + "\n\n");
+
+		buffWrite.close();
+
+	}
+	
 }

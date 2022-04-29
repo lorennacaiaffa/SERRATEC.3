@@ -20,9 +20,9 @@ public class ContaCorrente extends Conta implements Tributo {
 //	Set<Integer> agencias = new HashSet<>();
 
 	public ContaCorrente(TipoConta tipo, Integer idConta, String senhaConta, String numeroAgencia, String numeroConta,
-			Double saldo, String dataAbertura, Boolean status, Integer idContaCorrente, Double chequeEspecial,
+			Double saldo, String dataAbertura, Boolean status, String cpf, Integer idContaCorrente, Double chequeEspecial,
 			Double taxa) {
-		super(tipo, idConta, senhaConta, numeroAgencia, numeroConta, saldo, dataAbertura, status);
+		super(tipo, idConta, senhaConta, numeroAgencia, numeroConta, saldo, dataAbertura, status, cpf);
 		this.idContaCorrente = idContaCorrente;
 		this.chequeEspecial = chequeEspecial;
 		this.taxa = taxa;
@@ -130,14 +130,13 @@ public class ContaCorrente extends Conta implements Tributo {
 	public void transferir(Conta destino, double valor) throws ContaException {
 		if (valor <= 0) {
 			throw new ContaException("O valor digitado para transferência é inválido!");
-
 		} else {
 
 			double valorTributado = tributarTransferencia(valor);
 
 			if (this.getSaldo() - valorTributado >= 0) {
 				this.saldo(this.getSaldo() - valorTributado);
-				destino.setSaldo(destino.getSaldo() + valor);
+				this.destino.setSaldo(this.getSaldo() + valor);
 				this.totalTributado += Tributo.TRANSFERENCIA;
 
 				// Usamos printf para limitar as casas decimais

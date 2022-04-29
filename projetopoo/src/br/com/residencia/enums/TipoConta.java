@@ -1,7 +1,7 @@
 package br.com.residencia.enums;
 
 public enum TipoConta {
-	CORRENTE("corrente", 1), POUPANCA("poupanca", 2);
+	CORRENTE("corrente", 1), POUPANCA("poupanca", 2), CONTA("conta", 3);
 
 	private final String tipoConta;
 	private final Integer idConta;
