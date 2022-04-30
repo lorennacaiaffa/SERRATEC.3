@@ -13,8 +13,8 @@ public class Gerente extends Funcionario {
 	private Integer idGerente;
 	private Integer idAgencia;
 	
-	public static Map<String, Gerente> mapaGerentes = new HashMap<>();
-	public static TreeMap<String, Gerente> OrdenaGerentes = new TreeMap<>();
+	public static Map<String, Gerente> mapaContas = new HashMap<>();
+	public static TreeMap<String, Gerente> OrdenaUsuarios = new TreeMap<>();
 
 	public Gerente(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
 			String email, LocalDate dataNascimento, Integer idEndereco, Integer idFuncionario, String senha,

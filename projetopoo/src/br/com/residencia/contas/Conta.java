@@ -1,9 +1,6 @@
 package br.com.residencia.contas;
-<<<<<<< HEAD
-=======
 
 
->>>>>>> origin
 import java.util.HashMap;
 import java.util.Map;
 import br.com.residencia.enums.TipoConta;
@@ -16,15 +13,15 @@ public abstract class Conta implements Operacoes {
 	private String senhaConta;
 	private String numeroAgencia;
 	private String numeroConta;
-	protected Double saldo;
+	private Double saldo;
 	private String dataAbertura;
 	private Boolean status;
-	private String cpf;
 	
 	public static Map<String, Conta> mapaContas = new HashMap<>();
+//	Set<Integer> agencias = new HashSet<>();
 
 	public Conta(TipoConta tipo, Integer idConta, String senhaConta, String numeroAgencia, String numeroConta,
-			Double saldo, String dataAbertura, Boolean status, String cpf) {
+			Double saldo, String dataAbertura, Boolean status) {
 		super();
 		this.tipo = tipo;
 		this.idConta = idConta;
@@ -34,7 +31,6 @@ public abstract class Conta implements Operacoes {
 		this.setSaldo(saldo);
 		this.dataAbertura = dataAbertura;
 		this.status = status;
-		this.cpf = cpf;
 	}
 
 	public Conta() {
@@ -83,14 +79,6 @@ public abstract class Conta implements Operacoes {
 
 	public void setSatatus(Boolean status) {
 		this.status = status;
-	}
-	
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
 	}
 
 	public Double saldo(double saldo) {
