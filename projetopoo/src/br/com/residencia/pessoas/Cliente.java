@@ -51,9 +51,7 @@ public class Cliente extends Pessoa {
 		this.idConta = idConta;
 	}
 
-
 	public String getSenhaCliente() {
-
 		return senhaCliente;
 	}
 
