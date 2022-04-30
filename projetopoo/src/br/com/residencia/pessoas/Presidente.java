@@ -15,8 +15,8 @@ public class Presidente extends Funcionario {
 	private Integer idPresidente;
 	List<Agencia> agencia = new ArrayList<>();
 	
-	public static Map<String, Presidente> mapaPresidentes = new HashMap<>();
-	public static TreeMap<String, Presidente> OrdenaPresidentes = new TreeMap<>();
+	public static Map<String, Presidente> mapaPresidente = new HashMap<>();
+	public static TreeMap<String, Presidente> OrdenaUsuarios = new TreeMap<>();
 	
 	public Presidente(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf,
 			String telefone, String email, LocalDate dataNascimento, Integer idEndereco, Integer idFuncionario,

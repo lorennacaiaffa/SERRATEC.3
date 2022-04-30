@@ -16,8 +16,8 @@ public class Diretor extends Funcionario {
 	private Integer qtdAgencia;
 	List<Agencia> agencia = new ArrayList<>();// tentar varrer a lista com lenght
 	
-	public static Map<String, Diretor> mapaDiretores = new HashMap<>();
-	public static TreeMap<String, Diretor> OrdenaDiretores = new TreeMap<>();
+	public static Map<String, Diretor> mapaDiretor = new HashMap<>();
+	public static TreeMap<String, Diretor> OrdenaUsuarios = new TreeMap<>();
 
 	public Diretor(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
 			String email, LocalDate dataNascimento, Integer idEndereco, Integer idFuncionario, String senha,
