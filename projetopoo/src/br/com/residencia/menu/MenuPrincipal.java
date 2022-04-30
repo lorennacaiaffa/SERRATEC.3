@@ -93,7 +93,7 @@ public class MenuPrincipal {
 					System.out.println(contaDestino);
 				}
 				conta.transferir(contaDestino, inputValor);
-//				conta.sacar(inputValor);
+
 				break;
 
 			case 5:

@@ -11,6 +11,10 @@ import br.com.residencia.contas.ContaPoupanca;
 import br.com.residencia.enums.TipoConta;
 import br.com.residencia.menu.MenuPrincipal;
 import br.com.residencia.pessoas.Cliente;
+import br.com.residencia.pessoas.Diretor;
+import br.com.residencia.pessoas.Funcionario;
+import br.com.residencia.pessoas.Gerente;
+import br.com.residencia.pessoas.Presidente;
 
 public class Principal {
 
@@ -32,8 +36,13 @@ public class Principal {
 
 			Cliente usuario = Cliente.mapaClientes.get(inputCpf);
 			Conta conta = Conta.mapaContas.get(inputCpf);
-						
-			while (usuario == null || !(usuario.getSenhaCliente().equals(inputSenha))) {
+			Gerente gerente = Gerente.mapaGerentes.get(inputCpf);
+			Diretor diretor = Diretor.mapaDiretores.get(inputCpf);
+			Presidente presidente = Presidente.mapaPresidentes.get(inputCpf);
+			
+			if(usuario.getSenhaCliente().equals(inputSenha)) {
+			
+			while (usuario == null && !(usuario.getSenhaCliente().equals(inputSenha))) {
 				System.out.println("CPF e/ou Senha incorreto(s)\n\n");
 
 				System.out.print("Digite seu CPF: ");
@@ -47,9 +56,53 @@ public class Principal {
 
 			limpaTela();
 			subMenu(usuario, conta);
+			}
+			else if(gerente.getSenha().equals(inputSenha)) {
+				while (gerente == null && !(gerente.getSenha().equals(inputSenha))) {
+					System.out.println("CPF e/ou Senha incorreto(s)\n\n");
 
+					System.out.print("Digite seu CPF: ");
+					inputCpf = sc.next();
+					System.out.print("Digite sua senha: ");
+					inputSenha = sc.next();
+
+					gerente = Gerente.mapaGerentes.get(inputCpf);
+					}
+				System.out.println(gerente.getNome());
+				limpaTela();
+			}
+			else if (diretor.getSenha().equals(inputSenha)) {
+				while (diretor == null && !(diretor.getSenha().equals(inputSenha))) {
+					System.out.println("CPF e/ou Senha incorreto(s)\n\n");
+
+					System.out.print("Digite seu CPF: ");
+					inputCpf = sc.next();
+					System.out.print("Digite sua senha: ");
+					inputSenha = sc.next();
+
+					diretor = Diretor.mapaDiretores.get(inputCpf);
+					}
+				System.out.println(diretor.getNome());
+				limpaTela();
+			}
+			else if(presidente.getSenha().equals(inputSenha)) {
+				while (presidente == null && !(presidente.getSenha().equals(inputSenha))) {
+					System.out.println("CPF e/ou Senha incorreto(s)\n\n");
+
+					System.out.print("Digite seu CPF: ");
+					inputCpf = sc.next();
+					System.out.print("Digite sua senha: ");
+					inputSenha = sc.next();
+
+					presidente = Presidente.mapaPresidentes.get(inputCpf);
+					}
+				System.out.println(presidente.getNome());
+				limpaTela();
+			}
+				
+				
+				
 			imprimeLinhaHorizontal();
-
 		} catch (ContaException e) {
 			System.out.println(e.getMessage());
 		} catch (NullPointerException e) {
@@ -62,8 +115,8 @@ public class Principal {
 			menuInterativo();
 		}
 		sc.close();
+	
 	}
-
 	// SUBMENU
 	public void subMenu(Cliente usuario, Conta conta)
 			throws ContaException, NullPointerException, InputMismatchException, IOException {

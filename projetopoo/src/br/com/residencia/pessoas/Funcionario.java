@@ -3,6 +3,9 @@ package br.com.residencia.pessoas;
 
 
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 import br.com.residencia.enums.TipoUsuario;
 
@@ -20,6 +23,8 @@ public class Funcionario extends Pessoa {
 		this.senha = senha;
 		this.salario = salario;
 	}
+	public static Map<String, Pessoa> mapaPessoas = new HashMap<>();
+	public static TreeMap<String, Pessoa> OrdenaPessoas = new TreeMap<>();
 
 	public Funcionario() {
 

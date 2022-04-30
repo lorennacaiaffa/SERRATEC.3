@@ -22,6 +22,7 @@ import br.com.residencia.enums.TipoConta;
 import br.com.residencia.enums.TipoUsuario;
 import br.com.residencia.pessoas.Cliente;
 import br.com.residencia.pessoas.Diretor;
+import br.com.residencia.pessoas.Funcionario;
 import br.com.residencia.pessoas.Gerente;
 import br.com.residencia.pessoas.Pessoa;
 import br.com.residencia.pessoas.Presidente;
@@ -29,15 +30,6 @@ import br.com.residencia.pessoas.Presidente;
 public class LeituraEscrita {
 	final static String PATH_BASICO = "./temp/";
 	final static String EXTENSAO = ".txt";
-
-	public static List<Cliente> clientes = new ArrayList<>();
-	public static List<ContaCorrente> contaCorrentes = new ArrayList<>();
-	public static List<ContaPoupanca> contaPoupancas = new ArrayList<>();
-	public static List<Gerente> gerentes = new ArrayList<>();
-	public static List<Diretor> diretores = new ArrayList<>();
-	public static List<Presidente> presidentes = new ArrayList<>();
-	public static List<Endereco> enderecos = new ArrayList<>();
-	public static List<Agencia> agencias = new ArrayList<>();
 
 	public static void escritor(String path) throws IOException {
 		Scanner sc = new Scanner(System.in);
@@ -66,20 +58,21 @@ public class LeituraEscrita {
 			linha = buffRead.readLine();
 			if (linha != null) {
 				String[] vetor = linha.split(";");
-				
+
 				if (vetor[0].equalsIgnoreCase(TipoConta.CORRENTE.getTipoConta())) {
 					ContaCorrente contaCorrentes = new ContaCorrente(TipoConta.CORRENTE, Integer.parseInt(vetor[1]),
 							vetor[2], vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6],
-							Boolean.parseBoolean(vetor[7]), vetor[8], Integer.parseInt(vetor[9]), Double.parseDouble(vetor[10]),
-							Double.parseDouble(vetor[11]));
-							
-							Conta.mapaContas.put(vetor[8], contaCorrentes);		
-			
+							Boolean.parseBoolean(vetor[7]), vetor[8], Integer.parseInt(vetor[9]),
+							Double.parseDouble(vetor[10]), Double.parseDouble(vetor[11]));
+
+					Conta.mapaContas.put(vetor[8], contaCorrentes);
+
 				} else if (vetor[0].equalsIgnoreCase(TipoConta.POUPANCA.getTipoConta())) {
 					ContaPoupanca contaPoupancas = new ContaPoupanca(TipoConta.POUPANCA, Integer.parseInt(vetor[1]),
 							vetor[2], vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6],
-							Boolean.parseBoolean(vetor[7]), vetor[8], Integer.parseInt(vetor[9]), Double.parseDouble(vetor[10]));
-							
+							Boolean.parseBoolean(vetor[7]), vetor[8], Integer.parseInt(vetor[9]),
+							Double.parseDouble(vetor[10]));
+
 					Conta.mapaContas.put(vetor[8], contaPoupancas);
 
 				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.CLIENTE.getTipoUsuario())) {
@@ -90,13 +83,16 @@ public class LeituraEscrita {
 					Cliente.mapaClientes.put(vetor[4], clientes);
 					Cliente.OrdenaClientes.put(vetor[1], clientes);
 
+//				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.DIRETOR.getTipoUsuario() || vetor[0].equalsIgnoreCase(TipoUsuario.GERENTE.get)))) {
+//					Funcionario funcionarios = new Funcionario(TipoUsuario.FUNCIONARIO, vetor[1], vetor[2], vetor[3], vetor[4],
+//							vetor[5], vetor[6], LocalDate;)
+
 				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.GERENTE.getTipoUsuario())) {
 					Gerente gerentes = new Gerente(TipoUsuario.GERENTE, vetor[1], vetor[2], vetor[3], vetor[4],
 							vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]),
 							Integer.parseInt(vetor[9]), vetor[10], Double.parseDouble(vetor[11]),
 							Integer.parseInt(vetor[12]), Integer.parseInt(vetor[13]));
-
-					Gerente.mapaGerentes.put(vetor[12], gerentes);
+					Gerente.mapaGerentes.put(vetor[4], gerentes);
 					Gerente.OrdenaGerentes.put(vetor[1], gerentes);
 
 				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.DIRETOR.getTipoUsuario())) {
@@ -104,8 +100,7 @@ public class LeituraEscrita {
 							vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]),
 							Integer.parseInt(vetor[9]), vetor[10], Double.parseDouble(vetor[11]),
 							Integer.parseInt(vetor[12]), Integer.parseInt(vetor[13]));
-
-					Diretor.mapaDiretores.put(vetor[12], diretores);
+					Diretor.mapaDiretores.put(vetor[4], diretores);
 					Diretor.OrdenaDiretores.put(vetor[1], diretores);
 
 				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.PRESIDENTE.getTipoUsuario())) {
@@ -113,9 +108,9 @@ public class LeituraEscrita {
 							vetor[4], vetor[5], vetor[6], LocalDate.parse(vetor[7]), Integer.parseInt(vetor[8]),
 							Integer.parseInt(vetor[9]), vetor[10], Double.parseDouble(vetor[11]),
 							Integer.parseInt(vetor[12]));
-
-					Presidente.mapaPresidentes.put(vetor[12], presidentes);
+					Presidente.mapaPresidentes.put(vetor[4], presidentes);
 					Presidente.OrdenaPresidentes.put(vetor[1], presidentes);
+
 				} else if (vetor[0].equalsIgnoreCase("Endereco")) {
 					Endereco enderecos = new Endereco(Integer.parseInt(vetor[1]), vetor[2], vetor[3],
 							Integer.parseInt(vetor[4]), vetor[5], vetor[6], vetor[7], vetor[8]);
@@ -138,6 +133,7 @@ public class LeituraEscrita {
 
 		buffRead.close();
 	}
+
 	public static void comprovanteSaque(Conta conta, double valorSaque) throws IOException {
 		String nomeArquivo = conta.getCpf() + "_" + conta.getNumeroAgencia() + "_" + conta.getNumeroConta()
 				+ "_transacoes";
@@ -261,5 +257,5 @@ public class LeituraEscrita {
 		buffWrite.close();
 
 	}
-	
+
 }
