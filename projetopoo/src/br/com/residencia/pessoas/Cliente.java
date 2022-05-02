@@ -15,7 +15,7 @@ public class Cliente extends Pessoa {
 	private String senhaCliente;
 
 	public static Map<String, Cliente> mapaClientes = new HashMap<>();
-	public static TreeMap<String, Cliente> OrdenaClientes = new TreeMap<>();
+	public static TreeMap<String, Cliente> OrdenaUsuarios = new TreeMap<>();
 	
 	public Cliente(TipoUsuario tipoUsuario, String nome, String genero, String estadoCivil, String cpf, String telefone,
 			String email, LocalDate dataNascimento, Integer idEndereco, Integer idCliente, Integer idGerente,
