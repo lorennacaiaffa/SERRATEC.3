@@ -20,7 +20,7 @@ public class MenuInicial {
 					if (usuario.equals(login) && chave.equals(senha)) {
 					System.out.println("\n\t\t\t\t==== SEJA BEM-VINDO ====\n");
 			} 		else {
-					System.out.println("\n\t\tErro, login ou senha incorretos, digite novamente!");
+					System.out.println("\n\t\tErro, login ou senha incorretos, digite novamente!\n");
 					for (int i = 0; i < 2; i++)
 					System.out.println(" ");
 			}
