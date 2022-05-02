@@ -95,9 +95,9 @@ public abstract class Conta implements Operacoes {
 
 	@Override
 	public String toString() {
-		return "Conta [tipo=" + tipo + ", idConta=" + idConta + ", senhaConta=" + senhaConta + ", numeroAgencia="
-				+ numeroAgencia + ", numeroConta=" + numeroConta + ", saldo=" + getSaldo() + ", dataAbertura=" + dataAbertura
-				+ ", status=" + status + "]";
+		return "\n idConta=" + idConta + "\nnumeroAgencia="
+				+ numeroAgencia + "\n numeroConta=" + numeroConta + "\nsaldo=" + getSaldo() + "\ndataAbertura=" + dataAbertura
+				+ "\nstatus=" + status + "]";
 	}
 
 }

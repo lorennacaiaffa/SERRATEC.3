@@ -61,9 +61,10 @@ public class Cliente extends Pessoa {
 
 	@Override
 	public String toString() {
-		return "Cliente [idCliente=" + idCliente + ", idGerente=" + idGerente + ", idConta=" + idConta
-				+ ", senhaCliente=" + senhaCliente + "]";
-	}
-
+		return "Nome: " + getNome() + "\nGenero: " + getGenero() + "\nEstadoCivil: " + getEstadoCivil() + "\nCPF: " + getCpf() +
+			"\nTelefone: "+ getTelefone() + "\nEmail: " + getEmail() + "\nData de nascimento: " + getDataNascimento() +
+			"\nEndereco: " + getIdEndereco() + "\nIdCliente: " + getIdCliente();
 	
+		
+	}
 }

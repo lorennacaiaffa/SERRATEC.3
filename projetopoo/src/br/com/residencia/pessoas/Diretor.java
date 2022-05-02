@@ -14,7 +14,7 @@ public class Diretor extends Funcionario {
 
 	private Integer idDiretor;
 	private Integer qtdAgencia;
-	List<Agencia> agencia = new ArrayList<>();// tentar varrer a lista com lenght
+	List<Agencia> agencias = new ArrayList<>();
 	
 	public static Map<String, Diretor> mapaDiretores = new HashMap<>();
 	public static TreeMap<String, Diretor> OrdenaDiretores = new TreeMap<>();
@@ -26,7 +26,7 @@ public class Diretor extends Funcionario {
 				senha, salario);
 		this.idDiretor = idDiretor;
 		this.qtdAgencia = qtdAgencia;
-		this.agencia = new ArrayList<Agencia>();
+		this.agencias = new ArrayList<Agencia>();
 	}
 
 	public Diretor() {
@@ -46,16 +46,16 @@ public class Diretor extends Funcionario {
 	}
 
 	public List<Agencia> getAgencia() {
-		return agencia;
+		return agencias;
 	}
 
 	public void addToAgencia(Agencia agencia) {
-		this.agencia.add (agencia);
+		this.agencias.add (agencia);
 	}
 
 	@Override
 	public String toString() {
-		return "Diretor [idDiretor=" + idDiretor + ", qtdAgencia=" + qtdAgencia + ", agencia=" + agencia + "]";
+		return "Diretor [idDiretor=" + idDiretor + ", qtdAgencia=" + qtdAgencia + ", agencia=" + agencias + "]";
 	}
 
 }

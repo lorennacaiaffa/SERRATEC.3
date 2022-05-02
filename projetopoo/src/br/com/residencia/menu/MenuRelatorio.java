@@ -132,7 +132,7 @@ Principal principal = new Principal();
 	}
 
 	public static void imprimeLinhaHorizontal() {
-		System.out.println("--------------------------------------------------");
+		System.out.println("____________________________________________________");
 	}
 
 }

@@ -15,7 +15,7 @@ CLIENTE;Geisa Arruda;Feminino;casada;41515223981;(81)951634156;geisa@arruda.com.
 CLIENTE;Carlos Alves;Masculino;solteiro;50422658723;(23)951665656;carlos@alves.com.br;1991-01-01;3;3;3;3;1236
 CLIENTE;Joao Goncalves;Masculino;divorciado;57980981847;(47)994204156;joao@goncalves.com.br;1994-03-27;4;4;4;4;1237
 CLIENTE;Jose Batista;Masculino;solteiro;96741429590;(90)968541610;jose@batista.com.br;1974-12-30;5;5;1;5;1238
-CLIENTE;Aline Freitas;Feminino;casada;84685882408;(22)938516843;aline@freitas.com.br;1983-08-19;6;6;2;6;1239
+CLIENTE;Elon Musk;Masculino;casado;53161468450;(11)997315680;elon@musk.com.us;1979-01-15;6;6;2;6;1239
 CLIENTE;Carl Max;Masculino;Casado;48262491521;(88)947378078;carl@max.com.br;1968-04-15;7;7;3;7;1210
 CLIENTE;Fernanda Borges;Feminino;Casado;84107101290;(31)966359368;fernanda@borges.com.br;1983-09-23;8;8;4;8;1211
 CLIENTE;Ana Moraes;Feminino;Casado;77450674492;(92)903964525;ana@moraes.com.br;1979-04-30;9;9;1;9;1212
@@ -26,11 +26,9 @@ GERENTE;Carl Max;Masculino;Casado;48262491521;(88)947378078;carl@max.com.br;1968
 GERENTE;Fernanda Borges;Feminino;Casado;84107101290;(31)966359368;fernanda@borges.com.br;1983-09-23;8;2;1867;8843.32;2;2
 GERENTE;Ana Moraes;Feminino;Casado;77450674492;(92)903964525;ana@moraes.com.br;1979-04-30;9;3;6894;6385;3;3
 GERENTE;Carlos Moreira;Masculino;Casado;39492050471;(63)962798238;carlos@moreira.com.br;1979-02-21;10;4;1380;7156.98;4;4
-DIRETOR;Lorenna Caiaffa;Feminino;Casado;39092261408;(51)921695054;lorenna@caiaffa.com.br;1973-12-23;11;5;6843;28632.4;1;2
-DIRETOR;Geisa Alves;Feminino;Casado;11101372656;(68)991011168;geisa@alves.com.br;1978-07-04;12;6;1223;29243.1;2;2
 DIRETOR;Ricardo Navalha;Masculino;Casado;39092261408;(51)921695054;ricardo@navalha.com.br;1973-12-23;11;5;6843;28632.4;1;2
 DIRETOR;Maria da Conceicao;Feminino;Casado;11101372656;(68)991011168;maria@conceicao.com.br;1978-07-04;12;6;1223;29243.1;2;2
-PRESIDENTE;Elon Musk;Masculino;Casado;53161468450;(11)997315680;elon@musk.com.us;1979-01-15;13;7;6840;42987.3;1
+PRESIDENTE;Elon Musk;Masculino;Casado;53161468450;(11)997315680;elon@musk.com.us;1979-01-15;6;7;6840;42987.3;1
 ENDERECO;1;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP
 ENDERECO;2;13468220;Rua Joao Bandini;5;portao 3;Jardim Gloria;Sao Paulo;SP
 ENDERECO;3;13469414;Rua A;7;fundos;Jardim Sao Roque;Sao Paulo;SP

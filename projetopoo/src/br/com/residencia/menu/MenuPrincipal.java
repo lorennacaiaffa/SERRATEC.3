@@ -37,7 +37,7 @@ public class MenuPrincipal {
 			switch (opcaoOperacao) {
 			case 1:
 				principal.imprimeLinhaHorizontal();
-				System.out.println(conta.getSaldo());
+				System.out.printf("R$ %.2f%n ", conta.getSaldo());
 
 				principal.pulaLinha();
 				break;
@@ -48,7 +48,7 @@ public class MenuPrincipal {
 
 				conta.sacar(inputValor);
 
-				LeituraEscrita.comprovanteSaque(conta, inputValor);
+				LeituraEscrita.comprovanteSaqueDeposito(conta, inputValor, false);
 
 				principal.pulaLinha();
 
@@ -60,7 +60,7 @@ public class MenuPrincipal {
 
 				conta.depositar(inputValor);
 
-				// LeituraEscrita.comprovanteDeposito(conta, inputValor);
+				LeituraEscrita.comprovanteSaqueDeposito(conta, inputValor, true);
 
 				principal.pulaLinha();
 
@@ -92,8 +92,9 @@ public class MenuPrincipal {
 
 					System.out.println(contaDestino);
 				}
+				
 				conta.transferir(contaDestino, inputValor);
-
+				LeituraEscrita.comprovanteTransferencia(conta, contaDestino, inputValor);
 				break;
 
 			case 5:

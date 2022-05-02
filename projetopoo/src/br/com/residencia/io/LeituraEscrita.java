@@ -24,12 +24,17 @@ import br.com.residencia.pessoas.Cliente;
 import br.com.residencia.pessoas.Diretor;
 import br.com.residencia.pessoas.Funcionario;
 import br.com.residencia.pessoas.Gerente;
-import br.com.residencia.pessoas.Pessoa;
 import br.com.residencia.pessoas.Presidente;
 
 public class LeituraEscrita {
 	final static String PATH_BASICO = "./temp/";
 	final static String EXTENSAO = ".txt";
+
+	static List<Cliente> listaClientes = new ArrayList<Cliente>();
+	static List<Conta> listaContas = new ArrayList<Conta>();
+	static List<Agencia> listaAgencias = new ArrayList<Agencia>();
+	static List<Funcionario> listaFuncionarios = new ArrayList<Funcionario>();
+	static List<Gerente> listaGerentes = new ArrayList<Gerente>();
 
 	public static void escritor(String path) throws IOException {
 		Scanner sc = new Scanner(System.in);
@@ -54,6 +59,7 @@ public class LeituraEscrita {
 		BufferedReader buffRead = new BufferedReader(new FileReader(PATH_BASICO + path));
 		String linha = "";
 
+
 		while (true) {
 			linha = buffRead.readLine();
 			if (linha != null) {
@@ -64,16 +70,16 @@ public class LeituraEscrita {
 							vetor[2], vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6],
 							Boolean.parseBoolean(vetor[7]), vetor[8], Integer.parseInt(vetor[9]),
 							Double.parseDouble(vetor[10]), Double.parseDouble(vetor[11]));
-
 					Conta.mapaContas.put(vetor[8], contaCorrentes);
+					listaContas.add(contaCorrentes);
 
 				} else if (vetor[0].equalsIgnoreCase(TipoConta.POUPANCA.getTipoConta())) {
 					ContaPoupanca contaPoupancas = new ContaPoupanca(TipoConta.POUPANCA, Integer.parseInt(vetor[1]),
 							vetor[2], vetor[3], vetor[4], Double.parseDouble(vetor[5]), vetor[6],
 							Boolean.parseBoolean(vetor[7]), vetor[8], Integer.parseInt(vetor[9]),
 							Double.parseDouble(vetor[10]));
-
 					Conta.mapaContas.put(vetor[8], contaPoupancas);
+					listaContas.add(contaPoupancas);
 
 				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.CLIENTE.getTipoUsuario())) {
 					Cliente clientes = new Cliente(TipoUsuario.CLIENTE, vetor[1], vetor[2], vetor[3], vetor[4],
@@ -81,11 +87,10 @@ public class LeituraEscrita {
 							Integer.parseInt(vetor[9]), Integer.parseInt(vetor[10]), Integer.parseInt(vetor[11]),
 							vetor[12]);
 					Cliente.mapaClientes.put(vetor[4], clientes);
+					Cliente.mapaClientes.put(vetor[8], clientes);
 					Cliente.OrdenaClientes.put(vetor[1], clientes);
 
-//				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.DIRETOR.getTipoUsuario() || vetor[0].equalsIgnoreCase(TipoUsuario.GERENTE.get)))) {
-//					Funcionario funcionarios = new Funcionario(TipoUsuario.FUNCIONARIO, vetor[1], vetor[2], vetor[3], vetor[4],
-//							vetor[5], vetor[6], LocalDate;)
+					listaClientes.add(clientes);
 
 				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.GERENTE.getTipoUsuario())) {
 					Gerente gerentes = new Gerente(TipoUsuario.GERENTE, vetor[1], vetor[2], vetor[3], vetor[4],
@@ -94,6 +99,8 @@ public class LeituraEscrita {
 							Integer.parseInt(vetor[12]), Integer.parseInt(vetor[13]));
 					Gerente.mapaGerentes.put(vetor[4], gerentes);
 					Gerente.OrdenaGerentes.put(vetor[1], gerentes);
+					listaFuncionarios.add(gerentes);
+					listaGerentes.add(gerentes);
 
 				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.DIRETOR.getTipoUsuario())) {
 					Diretor diretores = new Diretor(TipoUsuario.DIRETOR, vetor[1], vetor[2], vetor[3], vetor[4],
@@ -102,6 +109,7 @@ public class LeituraEscrita {
 							Integer.parseInt(vetor[12]), Integer.parseInt(vetor[13]));
 					Diretor.mapaDiretores.put(vetor[4], diretores);
 					Diretor.OrdenaDiretores.put(vetor[1], diretores);
+					listaFuncionarios.add(diretores);
 
 				} else if (vetor[0].equalsIgnoreCase(TipoUsuario.PRESIDENTE.getTipoUsuario())) {
 					Presidente presidentes = new Presidente(TipoUsuario.PRESIDENTE, vetor[1], vetor[2], vetor[3],
@@ -110,7 +118,8 @@ public class LeituraEscrita {
 							Integer.parseInt(vetor[12]));
 					Presidente.mapaPresidentes.put(vetor[4], presidentes);
 					Presidente.OrdenaPresidentes.put(vetor[1], presidentes);
-
+					listaFuncionarios.add(presidentes);
+					
 				} else if (vetor[0].equalsIgnoreCase("Endereco")) {
 					Endereco enderecos = new Endereco(Integer.parseInt(vetor[1]), vetor[2], vetor[3],
 							Integer.parseInt(vetor[4]), vetor[5], vetor[6], vetor[7], vetor[8]);
@@ -119,8 +128,10 @@ public class LeituraEscrita {
 
 				} else if (vetor[0].equalsIgnoreCase("Agencia")) {
 					Agencia agencias = new Agencia(Integer.parseInt(vetor[1]), Integer.parseInt(vetor[2]),
-							Integer.parseInt(vetor[3]), Integer.parseInt(vetor[4]));
-					Agencia.mapaAgencias.put(vetor[0], agencias);
+							Integer.parseInt(vetor[3]), vetor[4]);
+					Agencia.mapaAgencias.put(vetor[1], agencias);
+					listaAgencias.add(agencias);
+					
 
 				} else {
 					break;
@@ -132,14 +143,44 @@ public class LeituraEscrita {
 		}
 
 		buffRead.close();
+
 	}
 
-	public static void comprovanteSaque(Conta conta, double valorSaque) throws IOException {
+	public static List<Cliente> juvenal() {
+		return listaClientes;
+	}
+	
+	public static List<Conta> juvenal2() {
+		return listaContas;
+		
+	}
+	
+	public static List<Agencia> juvenal3() {
+		return listaAgencias;
+		
+	}
+	public static List<Funcionario> juvenal4() {
+		return listaFuncionarios;
+	}
+	
+	public static List<Gerente> juvenal5() {
+		return listaGerentes;
+	}
+	
+	
+	public static void comprovanteSaqueDeposito(Conta conta, double valor, boolean ehDeposito) throws IOException {
+		String saqueDeposito = "";
+		if(ehDeposito) {
+			saqueDeposito = "DEPOSITO";
+		} else {
+			saqueDeposito = "SAQUE";
+		}
+		Date now = new Date();
 		String nomeArquivo = conta.getCpf() + "_" + conta.getNumeroAgencia() + "_" + conta.getNumeroConta()
-				+ "_transacoes";
+				+ "_transacoes_" + now.getTime();
 		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nomeArquivo + EXTENSAO));
 
-		String linha = "*************** SAQUE ***************";
+		String linha = "*************** " + saqueDeposito + " ***************";
 		buffWrite.append(linha + "\n");
 
 		linha = "CPF: " + conta.getCpf();
@@ -151,7 +192,7 @@ public class LeituraEscrita {
 		linha = "Conta: " + conta.getNumeroConta();
 		buffWrite.append(linha + "\n");
 
-		linha = "Valor: R$" + valorSaque;
+		linha = "Valor: R$" + valor;
 		buffWrite.append(linha + "\n");
 
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -159,12 +200,56 @@ public class LeituraEscrita {
 		linha = "Operação realizada em: " + simpleDateFormat.format(date);
 		buffWrite.append(linha + "\n");
 
-		linha = "*************** FIM DO SAQUE ***************";
+		linha = "*************** FIM DO " + saqueDeposito + " ***************";
 		buffWrite.append(linha + "\n\n");
 
 		buffWrite.close();
 
 	}
+	
+	public static void comprovanteTransferencia(Conta contaOrigem, Conta contaDestino, double valor) throws IOException {
+		Date now = new Date();
+		String nomeArquivo = contaOrigem.getCpf() + "_" + contaOrigem.getNumeroAgencia() + "_" + contaOrigem.getNumeroConta()
+				+ "_transacoes_" + now.getTime();
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(PATH_BASICO + nomeArquivo + EXTENSAO));
+
+		String linha = "*************** TRANFERENCIA ***************";
+		buffWrite.append(linha + "\n");
+
+		linha = "CPF do Remetente: " + contaOrigem.getCpf();
+		buffWrite.append(linha + "\n");
+
+		linha = "Agência do Remetente: " + contaOrigem.getNumeroAgencia();
+		buffWrite.append(linha + "\n");
+
+		linha = "Conta do Remetente: " + contaOrigem.getNumeroConta();
+		buffWrite.append(linha + "\n");
+
+		linha = "CPF do Destinatário: " + contaDestino.getCpf();
+		buffWrite.append(linha + "\n");
+
+		linha = "Agência do Destinatário: " + contaDestino.getNumeroAgencia();
+		buffWrite.append(linha + "\n");
+
+		linha = "Conta do Destinatário: " + contaDestino.getNumeroConta();
+		buffWrite.append(linha + "\n");
+
+		linha = "Valor: R$" + valor;
+		buffWrite.append(linha + "\n");
+
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		Date date = new Date();
+		linha = "Operação realizada em: " + simpleDateFormat.format(date);
+		buffWrite.append(linha + "\n");
+
+		linha = "*************** FIM DA TRANFERENCIA ***************";
+		buffWrite.append(linha + "\n\n");
+
+		buffWrite.close();
+
+	}
+	
+
 
 	public static void relatorioContasPorAgencia(Conta conta) throws IOException {
 
@@ -253,9 +338,8 @@ public class LeituraEscrita {
 
 		linha = "*******************************************************************************";
 		buffWrite.append(linha + "\n\n");
-
 		buffWrite.close();
 
 	}
-
+	
 }

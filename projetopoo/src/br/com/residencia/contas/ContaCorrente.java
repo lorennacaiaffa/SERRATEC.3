@@ -118,7 +118,7 @@ public class ContaCorrente extends Conta implements Tributo {
 			throw new ContaException("O valor digitado para depósito é inválido!");
 		} else {
 			double valorTributado = tributarDeposito(valor);
-			if (this.saldo - Tributo.DEPOSITO >= 0) {
+			if (this.saldo - Tributo.DEPOSITO >= 0.1) {
 				this.saldo += valorTributado;
 				this.totalTributado += Tributo.DEPOSITO;
 
@@ -139,7 +139,7 @@ public class ContaCorrente extends Conta implements Tributo {
 	
 	@Override
 	public void transferir(Conta destino, double valor) throws ContaException {
-		if (valor <= 0) {
+		if (valor <= 0.2) {
 			throw new ContaException("O valor digitado para transferência é inválido!");
 		} else {
 
@@ -177,8 +177,10 @@ public class ContaCorrente extends Conta implements Tributo {
 
 	@Override
 	public String toString() {
-		return "ContaCorrente [idContaCorrente=" + idContaCorrente + ", chequeEspecial=" + chequeEspecial + ", taxa="
-				+ taxa + "]";
+		
+		return "ContaCorrente \nidContaCorrente: " + idContaCorrente + "chequeEspecial: " + chequeEspecial + "taxa: "+ taxa + 
+				"\nidConta: " + getIdConta() + "\nnumeroAgencia: " + getNumeroAgencia()+ "\nnumeroConta: " + getNumeroConta()+ 
+				"\nsaldo: " + getSaldo() + "\ndataAbertura: " + getDataAbertura();
 	}
 
 	@Override

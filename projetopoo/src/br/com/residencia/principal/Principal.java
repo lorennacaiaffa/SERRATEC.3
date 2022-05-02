@@ -1,14 +1,17 @@
 package br.com.residencia.principal;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
+import br.com.residencia.agencias.Agencia;
 import br.com.residencia.contaException.ContaException;
 import br.com.residencia.contas.Conta;
-import br.com.residencia.contas.ContaCorrente;
-import br.com.residencia.contas.ContaPoupanca;
-import br.com.residencia.enums.TipoConta;
+import br.com.residencia.io.LeituraEscrita;
+import br.com.residencia.menu.MenuDiretor;
+import br.com.residencia.menu.MenuGerente;
 import br.com.residencia.menu.MenuPrincipal;
 import br.com.residencia.pessoas.Cliente;
 import br.com.residencia.pessoas.Diretor;
@@ -22,43 +25,48 @@ public class Principal {
 	public double valor;
 	public String inputCpf;
 	public String inputSenha;
+	private Diretor diretor;
+	private Cliente usuario;
+	private Presidente presidente;
+
 	public static Scanner sc = new Scanner(System.in);
+	private Gerente gerente;
 
 	public void menuInterativo() throws ContaException, NullPointerException, InputMismatchException {
 		try {
 
 			imprimeLinhaHorizontal();
-
 			System.out.print("Digite seu CPF: ");
 			inputCpf = sc.next();
 			System.out.print("Digite sua senha: ");
 			inputSenha = sc.next();
 
-			Cliente usuario = Cliente.mapaClientes.get(inputCpf);
+			usuario = Cliente.mapaClientes.get(inputCpf);
 			Conta conta = Conta.mapaContas.get(inputCpf);
-			Gerente gerente = Gerente.mapaGerentes.get(inputCpf);
-			Diretor diretor = Diretor.mapaDiretores.get(inputCpf);
-			Presidente presidente = Presidente.mapaPresidentes.get(inputCpf);
-			
-			if(usuario.getSenhaCliente().equals(inputSenha)) {
-			
-			while (usuario == null && !(usuario.getSenhaCliente().equals(inputSenha))) {
-				System.out.println("CPF e/ou Senha incorreto(s)\n\n");
+			if (usuario.getSenhaCliente().equals(inputSenha)) {
 
-				System.out.print("Digite seu CPF: ");
-				inputCpf = sc.next();
-				System.out.print("Digite sua senha: ");
-				inputSenha = sc.next();
+				while (usuario == null && !(usuario.getSenhaCliente().equals(inputSenha))) {
 
-				usuario = Cliente.mapaClientes.get(inputCpf);
-				conta = Conta.mapaContas.get(inputCpf);
+					System.out.println("CPF e/ou Senha incorreto(s)\n\n");
+					System.out.print("Digite seu CPF: ");
+					inputCpf = sc.next();
+					System.out.print("Digite sua senha: ");
+					inputSenha = sc.next();
+
+					usuario = Cliente.mapaClientes.get(inputCpf);
+					conta = Conta.mapaContas.get(inputCpf);
 				}
 
-			limpaTela();
-			subMenu(usuario, conta);
+				limpaTela();
+				subMenu(usuario, conta);
+
 			}
-			else if(gerente.getSenha().equals(inputSenha)) {
-				while (gerente == null && !(gerente.getSenha().equals(inputSenha))) {
+
+			gerente = Gerente.mapaGerentes.get(inputCpf);
+			if ("1234".equals(inputSenha) || "1867".equals(inputSenha) || "6894".equals(inputSenha)
+					|| "1380".equals(inputSenha)) {
+				while (gerente == null && !gerente.getSenha().equals(inputSenha)) {
+
 					System.out.println("CPF e/ou Senha incorreto(s)\n\n");
 
 					System.out.print("Digite seu CPF: ");
@@ -66,12 +74,14 @@ public class Principal {
 					System.out.print("Digite sua senha: ");
 					inputSenha = sc.next();
 
-					gerente = Gerente.mapaGerentes.get(inputCpf);
-					}
-				System.out.println(gerente.getNome());
+				}
+				gerente = Gerente.mapaGerentes.get(inputCpf);
+				MenuGerente.menuGerente(gerente);
+
 				limpaTela();
 			}
-			else if (diretor.getSenha().equals(inputSenha)) {
+			diretor = Diretor.mapaDiretores.get(inputCpf);
+			if ("6843".equals(inputSenha) || "1223".equals(inputSenha)) {
 				while (diretor == null && !(diretor.getSenha().equals(inputSenha))) {
 					System.out.println("CPF e/ou Senha incorreto(s)\n\n");
 
@@ -81,11 +91,12 @@ public class Principal {
 					inputSenha = sc.next();
 
 					diretor = Diretor.mapaDiretores.get(inputCpf);
-					}
-				System.out.println(diretor.getNome());
+				}
+				MenuDiretor.menuDiretor(diretor);
 				limpaTela();
 			}
-			else if(presidente.getSenha().equals(inputSenha)) {
+			presidente = Presidente.mapaPresidentes.get(inputCpf);
+			if (presidente.getSenha().equals(inputSenha)) {
 				while (presidente == null && !(presidente.getSenha().equals(inputSenha))) {
 					System.out.println("CPF e/ou Senha incorreto(s)\n\n");
 
@@ -95,13 +106,12 @@ public class Principal {
 					inputSenha = sc.next();
 
 					presidente = Presidente.mapaPresidentes.get(inputCpf);
-					}
+				}
 				System.out.println(presidente.getNome());
 				limpaTela();
+
 			}
-				
-				
-				
+
 			imprimeLinhaHorizontal();
 		} catch (ContaException e) {
 			System.out.println(e.getMessage());
@@ -115,8 +125,9 @@ public class Principal {
 			menuInterativo();
 		}
 		sc.close();
-	
+
 	}
+
 	// SUBMENU
 	public void subMenu(Cliente usuario, Conta conta)
 			throws ContaException, NullPointerException, InputMismatchException, IOException {
@@ -151,13 +162,158 @@ public class Principal {
 		}
 	}
 
-	public void limpaTela() {
-		for (int i = 0; i < 50; i++) {
+	public static void limpaTela() {
+		for (int i = 0; i < 2; i++) {
 			System.out.println();
 		}
 	}
 
 	public void imprimeLinhaHorizontal() {
-		System.out.println("--------------------------------------------------");
+		System.out.println("_________________________________");
 	}
+
+	public static void inciarLeituraCliente() throws IOException {
+		LeituraEscrita.leitor("entrada.txt");
+		List<Cliente> clientes = LeituraEscrita.juvenal();
+		List<Conta> contas = LeituraEscrita.juvenal2();
+	}
+
+	public static void inciarLeituraAgencia() throws IOException {
+		LeituraEscrita.leitor("entrada.txt");
+		List<Agencia> agencias = LeituraEscrita.juvenal3();
+	}
+
+	public static void inciarLeituraFuncionario() throws IOException {
+		LeituraEscrita.leitor("entrada.txt");
+		List<Funcionario> funcionarios = LeituraEscrita.juvenal4();
+	}
+
+	public static Integer contas(Gerente gerente) throws IOException {
+
+		Principal.inciarLeituraCliente();
+		List<Cliente> listaClientes = new ArrayList<Cliente>();
+		List<Cliente> lista1 = LeituraEscrita.juvenal();
+		for (Cliente cliente : lista1) {
+			if (gerente.getIdGerente() == cliente.getIdGerente()) {
+				listaClientes.add(cliente);
+			}
+		}
+		for (int i = 0; i < listaClientes.size() / 2; i++) {
+			System.out.println(listaClientes.get(i));
+			System.out.println("____________________________");
+		}
+		return (int) listaClientes.stream().count();
+	}
+
+	public static Integer relarotio(Gerente gerente) throws IOException {
+
+		Principal.inciarLeituraCliente();
+		List<Cliente> listaClientes = new ArrayList<Cliente>();
+		List<Cliente> lista1 = LeituraEscrita.juvenal();
+		List<Conta> listaContas = new ArrayList<Conta>();
+		List<Conta> lista2 = LeituraEscrita.juvenal2();
+		for (Cliente cliente : lista1) {
+			if (gerente.getIdGerente() == cliente.getIdGerente()) {
+				listaClientes.add(cliente);
+			}
+
+			for (Conta conta : lista2) {
+				if (cliente.getIdConta() == conta.getIdConta()) {
+					listaContas.add(conta);
+
+				}
+			}
+		}
+		if (gerente.getIdGerente() == 1) {
+			System.out.println("\n________________________________________");
+			System.out.println(listaClientes.get(0));
+			System.out.println(listaContas.get(0));
+			System.out.println("\n________________________________________");
+
+			System.out.println(listaClientes.get(1));
+			System.out.println(listaContas.get(4));
+			System.out.println("\n________________________________________");
+			System.out.println(listaClientes.get(2));
+			System.out.println(listaContas.get(8));
+			limpaTela();
+		} else if (gerente.getIdGerente() == 2) {
+			System.out.println("\n________________________________________");
+			System.out.println(listaClientes.get(0));
+			System.out.println(listaContas.get(1));
+			System.out.println("\n________________________________________");
+
+			System.out.println(listaClientes.get(1));
+			System.out.println(listaContas.get(5));
+			System.out.println("\n________________________________________");
+			System.out.println(listaClientes.get(2));
+			System.out.println(listaContas.get(9));
+			limpaTela();
+		} else if (gerente.getIdGerente() == 3) {
+			System.out.println("\n________________________________________");
+			System.out.println(listaClientes.get(0));
+			System.out.println(listaContas.get(2));
+			System.out.println("\n________________________________________");
+
+			System.out.println(listaClientes.get(1));
+			System.out.println(listaContas.get(6));
+			System.out.println("\n________________________________________");
+			System.out.println(listaClientes.get(2));
+			System.out.println(listaContas.get(10));
+			limpaTela();
+
+		} else if (gerente.getIdGerente() == 4) {
+			System.out.println("\n________________________________________");
+			System.out.println(listaClientes.get(0));
+			System.out.println(listaContas.get(3));
+			System.out.println("\n________________________________________");
+
+			System.out.println(listaClientes.get(1));
+			System.out.println(listaContas.get(7));
+			System.out.println("\n________________________________________");
+			System.out.println(listaClientes.get(2));
+			System.out.println(listaContas.get(11));
+			limpaTela();
+		}
+
+		return (int) listaClientes.stream().count();
+
+	}
+
+	public static List<Gerente> escolhaGerente(Diretor diretor) throws IOException {
+		Integer opcao;
+
+		Principal.inciarLeituraFuncionario();
+		List<Gerente> listaGerentes = new ArrayList<Gerente>();
+		List<Gerente> lista1 = LeituraEscrita.juvenal5();
+		List<Agencia> listaAgencias = new ArrayList<Agencia>();
+		List<Agencia> lista2 = LeituraEscrita.juvenal3();
+		for (Agencia agencia : lista2) {
+			if (agencia.getIdDiretor() == diretor.getIdDiretor());
+			listaAgencias.add(agencia);
+			for (Gerente gerente : lista1) {
+				if (gerente.getIdAgencia() == agencia.getIdAgencia()){
+					listaGerentes.add(gerente);
+				}
+			}
+			}
+		for (int i = 0; i < listaGerentes.size() / 2; i = i + 4) {
+			System.out.println(listaGerentes.get(i));
+		}
+		System.out.println("Digite o Id do gerente: ");
+		opcao = Integer.parseInt(Principal.sc.next());
+		switch (opcao) {
+		case 1:
+//			contas(listaGerentes.get(0));
+			System.out.println(listaGerentes.size());
+			System.out.println(listaGerentes);
+		case 2:
+			contas(listaGerentes.get(2));
+		
+		default:
+			System.out.println("Opção inválida!");
+		}
+
+		return listaGerentes;
+	}
+
 }
