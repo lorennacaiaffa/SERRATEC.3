@@ -1,0 +1,11 @@
+*************** TRANFERENCIA ***************
+CPF do Remetente: 42702380034
+Agência do Remetente: 0807
+Conta do Remetente: 645312
+CPF do Destinatário: 41515223981
+Agência do Destinatário: 0605
+Conta do Destinatário: 134218
+Valor: R$59.0
+Operação realizada em: 30/04/2022 12:08:57
+*************** FIM DA TRANFERENCIA ***************
+

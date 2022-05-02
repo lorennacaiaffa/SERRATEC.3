@@ -9,11 +9,11 @@ public class Agencia {
 	private Integer idAgencia;
 	private Integer idDiretor;
 	private Integer idEndereco;
-	private Integer numeroAgencia;
+	private String numeroAgencia;
 	
 	public static Map<String, Agencia> mapaAgencias = new HashMap<>();
 	
-	public Agencia(Integer idAgencia, Integer idDiretor, Integer idEndereco, Integer numeroAgencia) {
+	public Agencia(Integer idAgencia, Integer idDiretor, Integer idEndereco, String numeroAgencia) {
 		super();
 		this.idAgencia = idAgencia;
 		this.idDiretor = idDiretor;
@@ -45,12 +45,19 @@ public class Agencia {
 		this.idEndereco = idEndereco;
 	}
 
-	public Integer getNumeroAgencia() {
+	public String getNumeroAgencia() {
 		return numeroAgencia;
 	}
 
-	public void setNumeroAgencia(Integer numeroAgencia) {
+	public void setNumeroAgencia(String numeroAgencia) {
 		this.numeroAgencia = numeroAgencia;
 	}
+
+	@Override
+	public String toString() {
+		return "IdAgencia: " + idAgencia + "\nIdEndereco: " + idEndereco
+				+ "\nnumeroAgencia: " + numeroAgencia;
+	}
+	
 	
 }

@@ -111,7 +111,9 @@ public class ContaPoupanca extends Conta {
 	}
 	@Override
 	public String toString() {
-		return "ContaPoupanca [idContaPoupança=" + idContaPoupança + ", rendimento=" + rendimento + "]";
+		return "ContaPoupanca \nidContaPoupança: " + idContaPoupança + "rendimento: " + rendimento + 
+				"\nidConta: " + getIdConta() + "\nnumeroAgencia: " + getNumeroAgencia()+ "\nnumeroConta: " + getNumeroConta()+ 
+				"\nsaldo: " + getSaldo() + "\ndataAbertura: " + getDataAbertura();
 	}
 
 }
